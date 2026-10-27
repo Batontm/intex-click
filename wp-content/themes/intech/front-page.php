@@ -180,10 +180,10 @@ $faq = array(
 			<p class="lead">Клиенты ищут подрядчика в интернете и выбирают того, кто выглядит надёжно. Мы делаем так, чтобы этим подрядчиком были вы.</p>
 		</div>
 		<div class="problem__metrics">
-			<div class="metric"><b>Сайт<span>.</span></b><small>первое, что видит клиент о компании</small></div>
-			<div class="metric"><b>Поиск<span>.</span></b><small>клиенты находят вас в Яндексе и на Картах</small></div>
-			<div class="metric"><b>Реклама<span>.</span></b><small>кампании и аналитика под цели бизнеса</small></div>
-			<div class="metric"><b>IT<span>.</span></b><small>сеть и серверы, на которых держится работа</small></div>
+			<div class="metric"><b>Сайт</b><small>первое, что видит клиент о компании</small></div>
+			<div class="metric"><b>Поиск</b><small>клиенты находят вас в Яндексе и на Картах</small></div>
+			<div class="metric"><b>Реклама</b><small>кампании и аналитика под цели бизнеса</small></div>
+			<div class="metric"><b>IT</b><small>сеть и серверы, на которых держится работа</small></div>
 		</div>
 	</div>
 </section>
