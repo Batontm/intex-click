@@ -1,0 +1,89 @@
+<svg class="art" viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="i-g1" cx="50%" cy="45%" r="55%"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.3"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></radialGradient>
+    <radialGradient id="i-g2" cx="100%" cy="100%" r="55%"><stop offset="0" style="stop-color:var(--accent-2);stop-opacity:.4"/><stop offset="1" style="stop-color:var(--accent-2);stop-opacity:0"/></radialGradient>
+    <linearGradient id="i-rack" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16203A"/><stop offset="1" stop-color="#0A1020"/></linearGradient>
+    <filter id="i-glow" x="-80%" y="-80%" width="260%" height="260%"><feDropShadow dx="0" dy="0" stdDeviation="3.5" style="flood-color:var(--accent)" flood-opacity=".95"/></filter>
+    <filter id="i-gglow" x="-80%" y="-80%" width="260%" height="260%"><feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#34D399" flood-opacity=".9"/></filter>
+    <filter id="i-sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".6"/></filter>
+    <pattern id="i-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="rgba(148,178,255,.06)"/></pattern>
+    <pattern id="i-vent" width="5" height="12" patternUnits="userSpaceOnUse"><rect width="2" height="12" fill="rgba(255,255,255,.09)"/></pattern>
+  </defs>
+  <rect width="640" height="400" class="bg"/>
+  <rect width="640" height="400" fill="url(#i-grid)"/>
+  <rect width="640" height="400" fill="url(#i-g1)"/>
+  <rect width="640" height="400" fill="url(#i-g2)"/>
+
+  <!-- линии связи -->
+  <g class="stk" fill="none" stroke-width="1.6" stroke-dasharray="5 6" opacity=".75">
+    <path d="M184 96 C220 96 222 104 252 104"/>
+    <path d="M388 116 C420 116 428 100 462 100"/>
+    <path d="M388 220 C424 220 440 226 478 226"/>
+    <path d="M252 262 C214 262 206 296 172 296"/>
+  </g>
+  <g filter="url(#i-glow)">
+    <circle cx="222" cy="99" r="3.5" class="ac"/>
+    <circle cx="428" cy="106" r="3.5" class="ac"/>
+    <circle cx="440" cy="223" r="3.5" class="ac"/>
+    <circle cx="208" cy="282" r="3.5" class="ac"/>
+  </g>
+
+  <!-- серверная стойка -->
+  <g transform="translate(252 48)" filter="url(#i-sh)">
+    <rect width="136" height="306" rx="12" fill="url(#i-rack)" stroke="rgba(148,178,255,.22)"/>
+    <rect x="8" y="8" width="120" height="290" rx="7" fill="rgba(0,0,0,.25)"/>
+    <g transform="translate(14 16)">
+      <rect width="108" height="26" rx="5" class="unit"/><rect x="34" y="7" width="52" height="12" fill="url(#i-vent)"/><circle cx="12" cy="13" r="3" fill="#34D399" filter="url(#i-gglow)"/><circle cx="22" cy="13" r="3" class="ac" filter="url(#i-glow)"/><text x="102" y="17" text-anchor="end" class="t-mono">SW</text>
+      <rect y="34" width="108" height="46" rx="5" class="unit"/><rect x="34" y="44" width="52" height="26" fill="url(#i-vent)"/><circle cx="12" cy="57" r="3" fill="#34D399" filter="url(#i-gglow)"/><circle cx="22" cy="57" r="3" fill="#34D399" filter="url(#i-gglow)"/><text x="102" y="61" text-anchor="end" class="t-mono">SRV</text>
+      <rect y="88" width="108" height="46" rx="5" class="unit"/><rect x="34" y="98" width="52" height="26" fill="url(#i-vent)"/><circle cx="12" cy="111" r="3" fill="#34D399" filter="url(#i-gglow)"/><circle cx="22" cy="111" r="3" class="ac" filter="url(#i-glow)"/><text x="102" y="115" text-anchor="end" class="t-mono">1С</text>
+      <rect y="142" width="108" height="26" rx="5" class="unit"/><rect x="34" y="149" width="52" height="12" fill="url(#i-vent)"/><circle cx="12" cy="155" r="3" fill="#34D399" filter="url(#i-gglow)"/><text x="102" y="159" text-anchor="end" class="t-mono">NAS</text>
+      <rect y="176" width="108" height="26" rx="5" class="unit"/><rect x="34" y="183" width="52" height="12" fill="url(#i-vent)"/><circle cx="12" cy="189" r="3" class="ac" filter="url(#i-glow)"/><text x="102" y="193" text-anchor="end" class="t-mono">FW</text>
+      <rect y="210" width="108" height="46" rx="5" class="unit"/><rect x="34" y="220" width="52" height="26" fill="url(#i-vent)"/><circle cx="12" cy="233" r="3" fill="#34D399" filter="url(#i-gglow)"/><text x="102" y="237" text-anchor="end" class="t-mono">UPS</text>
+    </g>
+    <text x="68" y="292" text-anchor="middle" class="t-status">● ONLINE</text>
+  </g>
+
+  <!-- роутер и Wi-Fi -->
+  <g transform="translate(70 72)" filter="url(#i-sh)">
+    <line x1="22" y1="0" x2="18" y2="-18" stroke="rgba(148,178,255,.45)" stroke-width="3" stroke-linecap="round"/>
+    <line x1="92" y1="0" x2="96" y2="-18" stroke="rgba(148,178,255,.45)" stroke-width="3" stroke-linecap="round"/>
+    <rect width="114" height="46" rx="10" class="glass2"/>
+    <circle cx="20" cy="23" r="3" fill="#34D399" filter="url(#i-gglow)"/><circle cx="32" cy="23" r="3" class="ac" filter="url(#i-glow)"/><circle cx="44" cy="23" r="3" class="ac" filter="url(#i-glow)"/>
+    <rect x="62" y="18" width="38" height="10" fill="url(#i-vent)"/>
+  </g>
+  <g transform="translate(127 34)" class="stk" fill="none" stroke-width="2" stroke-linecap="round" filter="url(#i-glow)">
+    <path d="M-10 0 A14 14 0 0 1 10 0"/>
+    <path d="M-18 -8 A26 26 0 0 1 18 -8" opacity=".7"/>
+  </g>
+
+  <!-- ноутбук -->
+  <g transform="translate(76 268)" filter="url(#i-sh)">
+    <rect width="96" height="60" rx="7" class="glass2"/>
+    <rect x="8" y="8" width="80" height="44" rx="4" class="bg"/>
+    <rect x="16" y="16" width="30" height="5" rx="2.5" class="ac"/><rect x="16" y="27" width="56" height="4" rx="2" class="ln"/><rect x="16" y="36" width="44" height="4" rx="2" class="ln"/>
+    <path d="M-10 60 H106 L98 70 H-2 Z" fill="#8892A6"/>
+  </g>
+
+  <!-- мониторы -->
+  <g transform="translate(462 70)" filter="url(#i-sh)">
+    <rect width="104" height="64" rx="7" class="glass2"/>
+    <rect x="8" y="8" width="88" height="48" rx="4" class="bg"/>
+    <rect x="16" y="16" width="20" height="32" rx="3" class="ln"/><rect x="42" y="16" width="46" height="14" rx="3" class="ac" opacity=".7"/><rect x="42" y="34" width="46" height="14" rx="3" class="ln"/>
+    <rect x="46" y="64" width="12" height="12" fill="#5B657A"/><rect x="32" y="76" width="40" height="5" rx="2.5" fill="#8892A6"/>
+  </g>
+  <g transform="translate(478 196)" filter="url(#i-sh)">
+    <rect width="104" height="64" rx="7" class="glass2"/>
+    <rect x="8" y="8" width="88" height="48" rx="4" class="bg"/>
+    <path d="M16 46 L32 36 L44 40 L58 26 L72 30 L88 18" fill="none" class="stk" stroke-width="2"/>
+    <rect x="46" y="64" width="12" height="12" fill="#5B657A"/><rect x="32" y="76" width="40" height="5" rx="2.5" fill="#8892A6"/>
+  </g>
+
+  <!-- резервная копия -->
+  <g transform="translate(420 312)" filter="url(#i-sh)">
+    <rect width="200" height="58" rx="14" class="glass" style="stroke:#34D399;stroke-opacity:.45"/>
+    <path d="M28 14 L42 19 V29 C42 37 36 42 28 45 C20 42 14 37 14 29 V19 Z" fill="rgba(52,211,153,.15)" stroke="#34D399" stroke-width="1.8"/>
+    <path d="M22.5 29 L26.5 33 L34 25" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="54" y="26" class="t-strong">Резервная копия</text>
+    <text x="54" y="43" class="t-ok">выполнена</text>
+  </g>
+</svg>

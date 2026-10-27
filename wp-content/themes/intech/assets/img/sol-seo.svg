@@ -1,0 +1,80 @@
+<svg class="art" viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="p-g1" cx="20%" cy="10%" r="70%"><stop offset="0" style="stop-color:var(--accent-2);stop-opacity:.45"/><stop offset="1" style="stop-color:var(--accent-2);stop-opacity:0"/></radialGradient>
+    <radialGradient id="p-g2" cx="95%" cy="95%" r="55%"><stop offset="0" style="stop-color:var(--warm);stop-opacity:.3"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <linearGradient id="p-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.4"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></linearGradient>
+    <filter id="p-glow" x="-60%" y="-60%" width="220%" height="220%"><feDropShadow dx="0" dy="0" stdDeviation="4" style="flood-color:var(--accent)" flood-opacity=".9"/></filter>
+    <filter id="p-wglow" x="-80%" y="-80%" width="260%" height="260%"><feDropShadow dx="0" dy="0" stdDeviation="5" style="flood-color:var(--warm)" flood-opacity=".9"/></filter>
+    <filter id="p-sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".6"/></filter>
+    <pattern id="p-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="rgba(148,178,255,.06)"/></pattern>
+    <clipPath id="p-map"><rect width="204" height="148" rx="14"/></clipPath>
+  </defs>
+  <rect width="640" height="400" class="bg"/>
+  <rect width="640" height="400" fill="url(#p-grid)"/>
+  <rect width="640" height="400" fill="url(#p-g1)"/>
+  <rect width="640" height="400" fill="url(#p-g2)"/>
+
+  <!-- поисковая выдача -->
+  <g transform="translate(36 44)" filter="url(#p-sh)">
+    <rect width="336" height="276" rx="14" class="glass"/>
+    <rect x="16" y="16" width="304" height="36" rx="18" class="glass2"/>
+    <circle cx="38" cy="33" r="7" fill="none" class="stk" stroke-width="2"/><line x1="43" y1="38" x2="48" y2="43" class="stk" stroke-width="2" stroke-linecap="round"/>
+    <text x="60" y="39" class="t-muted">разработка сайтов для бизнеса</text>
+
+    <rect x="10" y="64" width="316" height="52" rx="12" style="fill:var(--accent);fill-opacity:.1;stroke:var(--accent);stroke-opacity:.7"/>
+    <circle cx="30" cy="82" r="7" class="ac" filter="url(#p-glow)"/>
+    <rect x="44" y="78" width="150" height="8" rx="4" class="ac"/>
+    <rect x="44" y="92" width="80" height="4" rx="2" fill="#34D399"/>
+    <rect x="44" y="102" width="236" height="4" rx="2" class="ln2"/>
+
+    <g opacity=".75">
+      <circle cx="30" cy="136" r="7" class="ln2"/><rect x="44" y="132" width="170" height="7" rx="3.5" class="ac2"/><rect x="44" y="145" width="70" height="4" rx="2" class="ln"/><rect x="44" y="155" width="220" height="4" rx="2" class="ln"/>
+      <circle cx="30" cy="186" r="7" class="ln2"/><rect x="44" y="182" width="140" height="7" rx="3.5" class="ac2"/><rect x="44" y="195" width="90" height="4" rx="2" class="ln"/><rect x="44" y="205" width="200" height="4" rx="2" class="ln"/>
+      <circle cx="30" cy="236" r="7" class="ln2"/><rect x="44" y="232" width="160" height="7" rx="3.5" class="ac2"/><rect x="44" y="245" width="60" height="4" rx="2" class="ln"/><rect x="44" y="255" width="226" height="4" rx="2" class="ln"/>
+    </g>
+  </g>
+
+  <!-- график посещаемости -->
+  <g transform="translate(392 36)" filter="url(#p-sh)">
+    <rect width="216" height="150" rx="14" class="glass"/>
+    <text x="16" y="26" class="t-muted">Посещаемость</text>
+    <line x1="16" y1="64" x2="200" y2="64" class="hair"/><line x1="16" y1="96" x2="200" y2="96" class="hair"/><line x1="16" y1="128" x2="200" y2="128" class="hair"/>
+    <rect x="22" y="104" width="16" height="30" rx="4" class="ac2" opacity=".5"/>
+    <rect x="48" y="96" width="16" height="38" rx="4" class="ac2" opacity=".55"/>
+    <rect x="74" y="100" width="16" height="34" rx="4" class="ac2" opacity=".6"/>
+    <rect x="100" y="84" width="16" height="50" rx="4" class="ac2" opacity=".65"/>
+    <rect x="126" y="76" width="16" height="58" rx="4" class="ac2" opacity=".7"/>
+    <rect x="152" y="64" width="16" height="70" rx="4" class="ac2" opacity=".8"/>
+    <rect x="178" y="50" width="16" height="84" rx="4" class="ac" filter="url(#p-glow)"/>
+    <path d="M30 98 L56 90 L82 94 L108 78 L134 70 L160 58 L186 44" fill="none" class="stk" stroke-width="2" stroke-dasharray="3 4"/>
+  </g>
+
+  <!-- карта -->
+  <g transform="translate(404 206)" filter="url(#p-sh)">
+    <rect width="204" height="148" rx="14" class="glass"/>
+    <g clip-path="url(#p-map)" stroke="rgba(148,178,255,.16)" fill="none">
+      <path d="M-10 40 C40 50 80 30 120 44 S190 60 220 50" stroke-width="7"/>
+      <path d="M-10 110 C50 100 90 120 140 104 S200 96 220 100" stroke-width="5"/>
+      <path d="M60 -10 C66 40 52 90 70 160" stroke-width="5"/>
+      <path d="M150 -10 C140 50 160 100 150 160" stroke-width="4"/>
+      <path d="M0 76 H220" stroke-width="2"/>
+      <rect x="84" y="56" width="40" height="30" rx="4" fill="rgba(52,211,153,.08)" stroke="none"/>
+    </g>
+    <circle cx="104" cy="70" r="22" fill="none" style="stroke:var(--warm)" stroke-opacity=".35" stroke-width="2"/>
+    <circle cx="104" cy="70" r="34" fill="none" style="stroke:var(--warm)" stroke-opacity=".18" stroke-width="2"/>
+    <path d="M104 82 C96 72 92 66 92 60 A12 12 0 0 1 116 60 C116 66 112 72 104 82 Z" class="wm" filter="url(#p-wglow)"/>
+    <circle cx="104" cy="60" r="4.5" class="bg"/>
+    <rect x="44" y="104" width="120" height="28" rx="14" class="glass2"/>
+    <text x="104" y="122" text-anchor="middle" class="t-strong-s">Ваша компания</text>
+  </g>
+
+  <!-- цели и обращения -->
+  <g transform="translate(206 334)" filter="url(#p-sh)">
+    <rect width="182" height="50" rx="14" class="glass" style="stroke:var(--accent);stroke-opacity:.45"/>
+    <circle cx="26" cy="25" r="12" fill="none" class="stk" stroke-width="2"/>
+    <circle cx="26" cy="25" r="6" fill="none" class="stk" stroke-width="2"/>
+    <circle cx="26" cy="25" r="2" class="ac"/>
+    <text x="48" y="22" class="t-strong-s">Обращения</text>
+    <text x="48" y="38" class="t-muted">звонки и заявки</text>
+  </g>
+</svg>

@@ -1,0 +1,69 @@
+<svg class="art" viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="w-g1" cx="80%" cy="5%" r="75%"><stop offset="0" style="stop-color:var(--accent-2);stop-opacity:.55"/><stop offset="1" style="stop-color:var(--accent-2);stop-opacity:0"/></radialGradient>
+    <radialGradient id="w-g2" cx="0%" cy="100%" r="60%"><stop offset="0" style="stop-color:var(--warm);stop-opacity:.28"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <linearGradient id="w-img" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.95"/><stop offset="1" style="stop-color:var(--accent-2);stop-opacity:.7"/></linearGradient>
+    <filter id="w-glow" x="-60%" y="-60%" width="220%" height="220%"><feDropShadow dx="0" dy="0" stdDeviation="5" style="flood-color:var(--accent)" flood-opacity=".85"/></filter>
+    <filter id="w-sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".6"/></filter>
+    <pattern id="w-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="rgba(148,178,255,.06)"/></pattern>
+  </defs>
+  <rect width="640" height="400" class="bg"/>
+  <rect width="640" height="400" fill="url(#w-grid)"/>
+  <rect width="640" height="400" fill="url(#w-g1)"/>
+  <rect width="640" height="400" fill="url(#w-g2)"/>
+
+  <!-- окно браузера -->
+  <g transform="translate(64 44)" filter="url(#w-sh)">
+    <rect width="436" height="292" rx="14" class="glass"/>
+    <circle cx="20" cy="16" r="4.5" fill="#FF5F57"/><circle cx="35" cy="16" r="4.5" fill="#FEBC2E"/><circle cx="50" cy="16" r="4.5" fill="#28C840"/>
+    <rect x="120" y="8" width="196" height="16" rx="8" class="ln"/>
+    <rect x="130" y="14" width="80" height="4" rx="2" class="ln2"/>
+    <line x1="0" y1="32" x2="436" y2="32" class="hair"/>
+
+    <rect x="22" y="48" width="44" height="9" rx="4.5" class="ac" filter="url(#w-glow)"/>
+    <rect x="232" y="50" width="26" height="5" rx="2.5" class="ln2"/><rect x="266" y="50" width="26" height="5" rx="2.5" class="ln2"/><rect x="300" y="50" width="26" height="5" rx="2.5" class="ln2"/>
+    <rect x="344" y="44" width="70" height="17" rx="8.5" class="ac"/>
+
+    <rect x="22" y="86" width="176" height="15" rx="5" class="tx"/>
+    <rect x="22" y="108" width="140" height="15" rx="5" class="tx"/>
+    <rect x="22" y="130" width="96" height="15" rx="5" class="ac"/>
+    <rect x="22" y="158" width="176" height="5" rx="2.5" class="ln"/>
+    <rect x="22" y="169" width="148" height="5" rx="2.5" class="ln"/>
+    <rect x="22" y="186" width="88" height="24" rx="12" class="ac" filter="url(#w-glow)"/>
+    <rect x="118" y="186" width="72" height="24" rx="12" fill="none" class="stk"/>
+
+    <rect x="222" y="78" width="192" height="134" rx="12" fill="url(#w-img)"/>
+    <circle cx="370" cy="112" r="20" fill="rgba(255,255,255,.28)"/>
+    <path d="M222 212 L276 156 L306 184 L344 142 L414 212 Z" fill="rgba(4,8,18,.45)"/>
+
+    <g transform="translate(22 228)">
+      <rect width="122" height="48" rx="9" class="glass2"/><rect x="12" y="12" width="18" height="18" rx="5" class="ac" opacity=".85"/><rect x="38" y="14" width="60" height="5" rx="2.5" class="ln2"/><rect x="38" y="25" width="44" height="4" rx="2" class="ln"/>
+      <rect x="134" width="122" height="48" rx="9" class="glass2"/><rect x="146" y="12" width="18" height="18" rx="5" class="ac2" opacity=".85"/><rect x="172" y="14" width="60" height="5" rx="2.5" class="ln2"/><rect x="172" y="25" width="44" height="4" rx="2" class="ln"/>
+      <rect x="268" width="124" height="48" rx="9" class="glass2"/><rect x="280" y="12" width="18" height="18" rx="5" class="wm" opacity=".85"/><rect x="306" y="14" width="60" height="5" rx="2.5" class="ln2"/><rect x="306" y="25" width="44" height="4" rx="2" class="ln"/>
+    </g>
+  </g>
+
+  <!-- телефон -->
+  <g transform="translate(476 136)" filter="url(#w-sh)">
+    <rect width="116" height="230" rx="20" fill="#0B1120" stroke="rgba(148,178,255,.28)"/>
+    <rect x="6" y="6" width="104" height="218" rx="15" class="bg"/>
+    <rect x="42" y="12" width="32" height="6" rx="3" fill="#1E293B"/>
+    <rect x="18" y="30" width="30" height="7" rx="3.5" class="ac"/>
+    <rect x="18" y="50" width="80" height="10" rx="4" class="tx"/>
+    <rect x="18" y="65" width="62" height="10" rx="4" class="tx"/>
+    <rect x="18" y="84" width="78" height="4" rx="2" class="ln"/>
+    <rect x="18" y="93" width="58" height="4" rx="2" class="ln"/>
+    <rect x="18" y="108" width="58" height="18" rx="9" class="ac" filter="url(#w-glow)"/>
+    <rect x="18" y="136" width="80" height="52" rx="9" fill="url(#w-img)" opacity=".85"/>
+    <rect x="18" y="196" width="37" height="18" rx="6" class="glass2"/><rect x="61" y="196" width="37" height="18" rx="6" class="glass2"/>
+  </g>
+
+  <!-- уведомление о заявке -->
+  <g transform="translate(26 300)" filter="url(#w-sh)">
+    <rect width="200" height="56" rx="14" class="glass" style="stroke:var(--accent);stroke-opacity:.45"/>
+    <circle cx="28" cy="28" r="15" fill="rgba(52,211,153,.18)"/>
+    <path d="M21 28.5l5 5 9-10" fill="none" stroke="#34D399" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="52" y="25" class="t-strong">Новая заявка</text>
+    <text x="52" y="42" class="t-muted">с формы на сайте</text>
+  </g>
+</svg>
