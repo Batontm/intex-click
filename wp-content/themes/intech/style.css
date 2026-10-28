@@ -809,3 +809,9 @@ a.ccard:hover { transform: translateY(-4px); border-color: rgba(var(--accent-rgb
 .toc a { color: var(--muted); text-decoration: none; }
 .toc a:hover { color: var(--accent); }
 .faq--one { grid-template-columns: 1fr; }
+
+/* ============ Заголовок «Полное сопровождение IT-инфраструктуры» без переносов ============ */
+.infra__intro { container-type: inline-size; }
+.nowrap { white-space: nowrap; }
+.infra__title { font-size: min(clamp(30px, 3.8vw, 52px), 7.5cqi); overflow-wrap: normal; }
+@media (max-width: 640px) { .infra__title { font-size: min(26px, 7.5cqi); } }

@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'INTECH_VERSION', '2.7.0' );
+define( 'INTECH_VERSION', '2.7.1' );
 
 require_once get_template_directory() . '/inc/landings.php';
 require_once get_template_directory() . '/inc/legal.php';

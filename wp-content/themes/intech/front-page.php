@@ -224,7 +224,7 @@ $faq = array(
 	<div class="infra glass reveal">
 		<div class="infra__intro">
 			<span class="eyebrow">IT-инфраструктура</span>
-			<h2 class="h2">Полное сопровождение <span class="grad">IT-инфраструктуры</span></h2>
+			<h2 class="h2 infra__title">Полное сопровождение <span class="grad nowrap">IT&#8209;инфраструктуры</span></h2>
 			<p class="lead">Приезжаем на объект, проектируем и собираем инфраструктуру под задачи компании, а дальше сопровождаем серверы, сеть и рабочие места.</p>
 			<ul class="infra__list">
 				<?php foreach ( $infra as $item ) : ?><li><?php echo esc_html( $item ); ?></li><?php endforeach; ?>
