@@ -7,12 +7,12 @@
 | 1 | Как сделать сайт для компании: этапы от идеи до запуска (`/blog/kak-sdelat-sayt-dlya-kompanii/`, card-13) | опубликовано 28.10.2026 |
 | 2 | IT-аутсорсинг или штатный сисадмин: что выбрать небольшой компании (`/blog/it-autsorsing-ili-shtatnyy-sisadmin/`, card-01) | опубликовано 28.10.2026 |
 | 3 | Резервное копирование по правилу 3-2-1: простое объяснение (`/blog/rezervnoe-kopirovanie-3-2-1/`, card-02) | опубликовано 28.10.2026 |
-| 4 | SEO-продвижение простыми словами: как сайт попадает в Яндекс (`/blog/seo-prodvizhenie-prostymi-slovami/`, card-20) | в очереди |
-| 5 | Как настроить локальную сеть в офисе: пошаговый план (`/blog/kak-nastroit-lokalnuyu-set-v-ofise/`, card-06) | в очереди |
-| 6 | Почему сайт не приносит заявок: 12 частых причин (`/blog/pochemu-sayt-ne-prinosit-zayavok/`, card-24) | в очереди |
-| 7 | Что делает системный администратор и нужен ли он вашей компании (`/blog/chto-delaet-sistemnyy-administrator/`, card-00) | в очереди |
-| 8 | Как добавить организацию на Яндекс Карты и оформить карточку (`/blog/kak-dobavit-organizatsiyu-na-yandeks-karty/`, card-21) | в очереди |
-| 9 | Как защитить компанию от вирусов-шифровальщиков: чек-лист (`/blog/zashchita-ot-shifrovalshchikov/`, card-11) | в очереди |
+| 4 | SEO-продвижение простыми словами: как сайт попадает в Яндекс (`/blog/seo-prodvizhenie-prostymi-slovami/`, card-20) | опубликовано 28.10.2026 |
+| 5 | Как настроить локальную сеть в офисе: пошаговый план (`/blog/kak-nastroit-lokalnuyu-set-v-ofise/`, card-06) | опубликовано 28.10.2026 |
+| 6 | Почему сайт не приносит заявок: 12 частых причин (`/blog/pochemu-sayt-ne-prinosit-zayavok/`, card-24) | опубликовано 28.10.2026 |
+| 7 | Что делает системный администратор и нужен ли он вашей компании (`/blog/chto-delaet-sistemnyy-administrator/`, card-00) | опубликовано 28.10.2026 |
+| 8 | Как добавить организацию на Яндекс Карты и оформить карточку (`/blog/kak-dobavit-organizatsiyu-na-yandeks-karty/`, card-21) | опубликовано 28.10.2026 |
+| 9 | Как защитить компанию от вирусов-шифровальщиков: чек-лист (`/blog/zashchita-ot-shifrovalshchikov/`, card-11) | опубликовано 28.10.2026 |
 | 10 | Лендинг — это простыми словами: когда он нужен бизнесу (`/blog/lending-eto-prostymi-slovami/`, card-14) | в очереди |
 | 11 | Резервная копия 1С: как делать и как проверить, что она рабочая (`/blog/rezervnaya-kopiya-1s/`, card-04) | в очереди |
 | 12 | Контекстная реклама: что это и как работает Яндекс Директ (`/blog/kontekstnaya-reklama-chto-eto/`, card-25) | в очереди |
