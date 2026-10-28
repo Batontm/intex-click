@@ -348,9 +348,9 @@ $faq = array(
 		<p class="lead">Мы соединяем разработку и «железо»: создаём сайты и программы, приводим клиентов, а в офисе сопровождаем серверы и сеть, на которых держится работа компании. Один подрядчик — одна ответственность.</p>
 	</div>
 	<div class="stats">
-		<div class="stat glass spot reveal"><div class="stat__num stat__num--word">Одна команда<span>.</span></div><div class="stat__label">сайты, программы и IT-инфраструктура у одного подрядчика</div><span class="xp"><span class="xp__in"><span class="stat__more">Не нужно координировать нескольких подрядчиков — вопросы по сайту, программам и IT решаются в одном месте.</span></span></span></div>
-		<div class="stat glass spot reveal"><div class="stat__num stat__num--word">Прозрачно<span>.</span></div><div class="stat__label">объём, стоимость и сроки согласуем до начала работ</div><span class="xp"><span class="xp__in"><span class="stat__more">Все договорённости фиксируем в документе, изменения обсуждаем заранее.</span></span></span></div>
-		<div class="stat glass spot reveal"><div class="stat__num stat__num--word">Рядом<span>.</span></div><div class="stat__label">остаёмся на связи и после передачи результата</div><span class="xp"><span class="xp__in"><span class="stat__more">Отвечаем на вопросы и помогаем с доработками после запуска.</span></span></span></div>
+		<div class="stat glass spot reveal"><div class="stat__num stat__num--word">Одна команда</div><div class="stat__label">сайты, программы и IT-инфраструктура у одного подрядчика</div><span class="xp"><span class="xp__in"><span class="stat__more">Не нужно координировать нескольких подрядчиков — вопросы по сайту, программам и IT решаются в одном месте.</span></span></span></div>
+		<div class="stat glass spot reveal"><div class="stat__num stat__num--word">Прозрачно</div><div class="stat__label">объём, стоимость и сроки согласуем до начала работ</div><span class="xp"><span class="xp__in"><span class="stat__more">Все договорённости фиксируем в документе, изменения обсуждаем заранее.</span></span></span></div>
+		<div class="stat glass spot reveal"><div class="stat__num stat__num--word">Рядом</div><div class="stat__label">остаёмся на связи и после передачи результата</div><span class="xp"><span class="xp__in"><span class="stat__more">Отвечаем на вопросы и помогаем с доработками после запуска.</span></span></span></div>
 	</div>
 </section>
 

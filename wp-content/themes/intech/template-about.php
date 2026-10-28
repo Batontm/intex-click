@@ -85,7 +85,7 @@ get_header();
 	<div class="principles">
 		<?php foreach ( $principles as $p ) : ?>
 			<div class="principle glass reveal">
-				<div class="stat__num stat__num--word"><?php echo esc_html( $p[0] ); ?><span>.</span></div>
+				<div class="stat__num stat__num--word"><?php echo esc_html( $p[0] ); ?></div>
 				<p class="principle__text"><?php echo esc_html( $p[1] ); ?></p>
 			</div>
 		<?php endforeach; ?>
