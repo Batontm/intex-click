@@ -8,7 +8,7 @@ $video = intech_hero_video_url();
 $phone = intech_opt( 'intech_phone', '+7 (931) 605-44-84' );
 $wa    = intech_opt( 'intech_wa', 'https://wa.me/79316054484' );
 
-$ticker = array( 'Разработка сайтов', 'Программы на заказ', 'Готовые решения', 'SEO-продвижение', 'Яндекс Директ', 'Серверы', 'Сети и Wi-Fi', 'Резервное копирование', 'Видеонаблюдение', 'IT-сопровождение' );
+$ticker = array( 'Разработка сайтов', 'Программы на заказ', 'Готовые решения', 'SEO-продвижение', 'Яндекс Директ', 'Серверы', 'Сети и Wi-Fi', 'Резервное копирование', 'IT-сопровождение' );
 
 $services = array(
 	array( 'web', 'Разработка сайтов', 'Корпоративные сайты, лендинги и интернет-магазины с современным дизайном и удобной админкой. Адаптивные и готовые к продвижению.', array( 'WordPress', 'Лендинги', 'Магазины', 'Адаптив' ), 'half' ),
@@ -233,7 +233,6 @@ $faq = array(
 				<a class="btn btn--accent" href="#contacts">Заказать аудит инфраструктуры <span class="arr" aria-hidden="true">→</span></a>
 				<a class="btn btn--ghost" href="<?php echo esc_url( intech_landing_url( 'servery' ) ); ?>">Серверы и бэкапы</a>
 				<a class="btn btn--ghost" href="<?php echo esc_url( intech_landing_url( 'seti' ) ); ?>">Сети и Wi-Fi</a>
-				<a class="btn btn--ghost" href="<?php echo esc_url( intech_landing_url( 'videonablyudenie' ) ); ?>">Видеонаблюдение</a>
 			</div>
 		</div>
 		<div class="rack" aria-hidden="true">

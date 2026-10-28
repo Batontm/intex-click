@@ -31,7 +31,7 @@ $home = home_url( '/' );
 		<?php
 		$cur_landing = intech_is_landing() ? get_query_var( 'intech_landing' ) : '';
 		$cur_page    = intech_current_page();
-		$nav_icons   = array( 'sozdanie-saytov' => 'web', 'prodvizhenie-saytov' => 'seo', 'it-autsorsing' => 'support', 'servery' => 'srv', 'seti' => 'net', 'videonablyudenie' => 'cam' );
+		$nav_icons   = array( 'sozdanie-saytov' => 'web', 'prodvizhenie-saytov' => 'seo', 'it-autsorsing' => 'support', 'servery' => 'srv', 'seti' => 'net' );
 		$has_form    = is_front_page() || $cur_landing || intech_is_blog() || in_array( $cur_page, array( 'o-kompanii', 'kontakty' ), true );
 		?>
 		<nav class="nav" id="siteNav" aria-label="Основное меню">

@@ -30,7 +30,6 @@ $address = trim( intech_opt( 'intech_address', '' ) );
 			<a href="<?php echo esc_url( intech_landing_url( 'it-autsorsing' ) ); ?>">IT-обслуживание</a>
 			<a href="<?php echo esc_url( intech_landing_url( 'servery' ) ); ?>">Серверы и бэкапы</a>
 			<a href="<?php echo esc_url( intech_landing_url( 'seti' ) ); ?>">Сети и Wi-Fi</a>
-			<a href="<?php echo esc_url( intech_landing_url( 'videonablyudenie' ) ); ?>">Видеонаблюдение</a>
 		</nav>
 		<nav class="site-footer__col" aria-label="Компания">
 			<strong>Компания</strong>
