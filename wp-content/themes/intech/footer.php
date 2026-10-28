@@ -15,9 +15,11 @@ $address = trim( intech_opt( 'intech_address', '' ) );
 		<div class="site-footer__brand">
 			<a class="logo logo--footer" href="<?php echo esc_url( $home ); ?>" aria-label="ИНТЕХ — на главную"><?php echo intech_logo_svg( 'full', 'logo__svg' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></a>
 			<span>Сайты, программы и IT-сопровождение для бизнеса.</span>
-			<div class="socials">
+			<div class="socials socials--full">
+				<?php echo intech_phone_link( 'socials__pill' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+				<?php echo intech_email_link( 'socials__pill' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 				<?php foreach ( $socials as $s ) : ?>
-					<a href="<?php echo esc_url( $s[1] ); ?>" aria-label="<?php echo esc_attr( $s[0] ); ?>" target="_blank" rel="noopener"><?php echo esc_html( $s[2] ); ?></a>
+					<a class="socials__pill" href="<?php echo esc_url( $s[1] ); ?>" target="_blank" rel="noopener"><?php echo esc_html( $s[0] ); ?></a>
 				<?php endforeach; ?>
 			</div>
 		</div>

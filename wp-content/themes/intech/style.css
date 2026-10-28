@@ -815,3 +815,8 @@ a.ccard:hover { transform: translateY(-4px); border-color: rgba(var(--accent-rgb
 .nowrap { white-space: nowrap; }
 .infra__title { font-size: min(clamp(30px, 3.8vw, 52px), 7.5cqi); overflow-wrap: normal; }
 @media (max-width: 640px) { .infra__title { font-size: min(26px, 7.5cqi); } }
+
+/* ============ Подвал: контакты полностью ============ */
+.socials--full { flex-wrap: wrap; gap: 10px; }
+.socials--full .socials__pill { width: auto; height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--line-strong); display: inline-flex; align-items: center; font-size: 14px; font-weight: 600; color: var(--white); white-space: nowrap; transition: border-color .2s, box-shadow .2s; }
+.socials--full .socials__pill:hover { border-color: var(--accent); box-shadow: 0 0 18px rgba(var(--accent-rgb), .5); }
