@@ -35,6 +35,13 @@ get_header();
 				<span class="ccard__value">Написать в <?php echo esc_html( $m[0] ); ?> →</span>
 			</a>
 		<?php endforeach; ?>
+		<?php foreach ( intech_socials() as $s ) : ?>
+			<a class="ccard glass spot reveal" href="<?php echo esc_url( $s[1] ); ?>" target="_blank" rel="noopener">
+				<span class="svc__icon"><?php echo intech_icon( 'smm' ); // phpcs:ignore ?></span>
+				<span class="ccard__label"><?php echo esc_html( $s[0] . $s[3] ); ?></span>
+				<span class="ccard__value"><?php echo esc_html( $s[2] ); ?> →</span>
+			</a>
+		<?php endforeach; ?>
 		<a class="ccard glass spot reveal" href="#contacts">
 			<span class="svc__icon"><?php echo intech_icon( 'code' ); // phpcs:ignore ?></span>
 			<span class="ccard__label">Заявка</span>

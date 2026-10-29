@@ -133,6 +133,12 @@ add_action( 'wp_head', function () {
 			'identifier' => array( '@type' => 'PropertyValue', 'propertyID' => 'ОГРН', 'value' => $c['ogrn'] ),
 			'hasOfferCatalog' => array( '@type' => 'OfferCatalog', 'name' => 'Услуги', 'itemListElement' => $services ),
 		);
+		$same = array_map( function ( $s ) {
+			return $s[1];
+		}, intech_socials() );
+		if ( $same ) {
+			$org['sameAs'] = $same;
+		}
 		echo '<script type="application/ld+json">' . wp_json_encode( $org, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) . "</script>\n";
 	}
 	$slug = intech_current_page();

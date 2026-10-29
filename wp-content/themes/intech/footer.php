@@ -21,6 +21,9 @@ $address = trim( intech_opt( 'intech_address', '' ) );
 				<?php foreach ( $socials as $s ) : ?>
 					<a class="socials__pill" href="<?php echo esc_url( $s[1] ); ?>" target="_blank" rel="noopener"><?php echo esc_html( $s[0] ); ?></a>
 				<?php endforeach; ?>
+				<?php foreach ( intech_socials() as $s ) : ?>
+					<a class="socials__pill" href="<?php echo esc_url( $s[1] ); ?>" target="_blank" rel="noopener"><?php echo esc_html( $s[0] . $s[3] ); ?></a>
+				<?php endforeach; ?>
 			</div>
 		</div>
 		<nav class="site-footer__col" aria-label="Услуги">
@@ -53,6 +56,9 @@ $address = trim( intech_opt( 'intech_address', '' ) );
 	<div class="container site-footer__bottom">
 		<span>© <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( $company['name'] ); ?> · ИНН <?php echo esc_html( $company['inn'] ); ?> · ОГРН <?php echo esc_html( $company['ogrn'] ); ?></span>
 		<a href="<?php echo esc_url( intech_privacy_url() ); ?>">Политика конфиденциальности</a>
+		<?php if ( intech_has_instagram() ) : ?>
+			<span class="site-footer__note">* Instagram принадлежит компании Meta, признанной экстремистской и запрещённой в России.</span>
+		<?php endif; ?>
 	</div>
 </footer>
 

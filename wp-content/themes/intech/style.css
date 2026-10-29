@@ -820,3 +820,10 @@ a.ccard:hover { transform: translateY(-4px); border-color: rgba(var(--accent-rgb
 .socials--full { flex-wrap: wrap; gap: 10px; }
 .socials--full .socials__pill { width: auto; height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--line-strong); display: inline-flex; align-items: center; font-size: 14px; font-weight: 600; color: var(--white); white-space: nowrap; transition: border-color .2s, box-shadow .2s; }
 .socials--full .socials__pill:hover { border-color: var(--accent); box-shadow: 0 0 18px rgba(var(--accent-rgb), .5); }
+.contact__socials { color: var(--muted); font-size: 14px; }
+.contact__socials a { color: var(--white); }
+.contact__socials a:hover { color: var(--accent); }
+.site-footer__note { flex-basis: 100%; font-size: 12px; color: var(--faint); }
+.contact__phones .contact__socials { font-size: 15px; margin-top: 4px; }
+.contact__phones .contact__socials a { font-family: inherit; font-size: inherit; color: var(--white); }
+.contact__phones .contact__socials a:hover { color: var(--accent); }

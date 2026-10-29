@@ -26,6 +26,14 @@ $phone = intech_opt( 'intech_phone', '+7 (931) 605-44-84' );
 				<?php foreach ( intech_messengers() as $m ) : ?>
 					<a href="<?php echo esc_url( $m[1] ); ?>" target="_blank" rel="noopener">Написать нам в <?php echo esc_html( $m[0] ); ?> →</a>
 				<?php endforeach; ?>
+				<?php $intech_soc = intech_socials(); ?>
+				<?php if ( $intech_soc ) : ?>
+					<span class="contact__socials">Мы в соцсетях:
+						<?php foreach ( $intech_soc as $i => $s ) : ?>
+							<?php echo $i ? ' · ' : ''; ?><a href="<?php echo esc_url( $s[1] ); ?>" target="_blank" rel="noopener"><?php echo esc_html( $s[0] . $s[3] ); ?></a>
+						<?php endforeach; ?>
+					</span>
+				<?php endif; ?>
 			</div>
 		</div>
 		<form class="form" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">

@@ -7,7 +7,9 @@
  *   phone_click — клик по телефону;
  *   tg_click    — переход в Telegram;
  *   max_click   — переход в MAX;
- *   email_click — клик по почте.
+ *   email_click — клик по почте;
+ *   vk_click    — переход во ВКонтакте;
+ *   ig_click    — переход в Instagram.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -54,6 +56,8 @@ add_action( 'wp_head', function () {
 		else if (h.indexOf('mailto:') === 0) { goal('email_click'); }
 		else if (/^https?:\/\/(t\.me|telegram\.me)\//i.test(h)) { goal('tg_click'); }
 		else if (/^https?:\/\/(www\.)?max\.ru\//i.test(h)) { goal('max_click'); }
+		else if (/^https?:\/\/(www\.)?(vk\.ru|vk\.com)\//i.test(h)) { goal('vk_click'); }
+		else if (/^https?:\/\/(www\.)?instagram\.com\//i.test(h)) { goal('ig_click'); }
 	}, true);
 })();
 </script>

@@ -24,11 +24,34 @@ function intech_messengers() {
 	$list = array(
 		array( 'Telegram', intech_opt( 'intech_tg', 'https://t.me/Alexey_K_KLD' ), 'TG' ),
 		array( 'MAX', intech_opt( 'intech_max', 'https://max.ru/u/f9LHodD0cOIwLg04EShW-1I7Plcar58GvXEsrOKXsAnuI3U0PsP2JRZo-L0' ), 'MAX' ),
-		array( 'ВКонтакте', intech_opt( 'intech_vk', '' ), 'VK' ),
 	);
 	return array_values( array_filter( $list, function ( $m ) {
 		return $m[1] && '#' !== $m[1];
 	} ) );
+}
+
+/**
+ * Соцсети компании: [название, ссылка, подпись, сноска].
+ * Сноска (*) — для Instagram: пояснение выводится в подвале.
+ */
+function intech_socials() {
+	$list = array(
+		array( 'ВКонтакте', intech_opt( 'intech_vk', 'https://vk.ru/intexclick' ), 'vk.ru/intexclick', '' ),
+		array( 'Instagram', intech_opt( 'intech_instagram', 'https://www.instagram.com/intex.click/' ), '@intex.click', '*' ),
+	);
+	return array_values( array_filter( $list, function ( $s ) {
+		return $s[1] && '#' !== $s[1];
+	} ) );
+}
+
+/** Есть ли среди соцсетей Instagram (нужна сноска в подвале). */
+function intech_has_instagram() {
+	foreach ( intech_socials() as $s ) {
+		if ( '*' === $s[3] ) {
+			return true;
+		}
+	}
+	return false;
 }
 
 /**

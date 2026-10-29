@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'INTECH_VERSION', '2.7.2' );
+define( 'INTECH_VERSION', '2.7.3' );
 
 require_once get_template_directory() . '/inc/landings.php';
 require_once get_template_directory() . '/inc/legal.php';
@@ -88,7 +88,8 @@ add_action( 'customize_register', function ( $wp_customize ) {
 		'intech_address' => array( 'Адрес (если пусто — на сайте не показывается)', '' ),
 		'intech_tg'      => array( 'Ссылка на Telegram', 'https://t.me/Alexey_K_KLD' ),
 		'intech_max'     => array( 'Ссылка на MAX', 'https://max.ru/u/f9LHodD0cOIwLg04EShW-1I7Plcar58GvXEsrOKXsAnuI3U0PsP2JRZo-L0' ),
-		'intech_vk'      => array( 'Ссылка на ВКонтакте', '' ),
+		'intech_vk'      => array( 'Ссылка на ВКонтакте', 'https://vk.ru/intexclick' ),
+		'intech_instagram' => array( 'Ссылка на Instagram', 'https://www.instagram.com/intex.click/' ),
 	);
 	foreach ( $text_fields as $id => $field ) {
 		$wp_customize->add_setting( $id, array(
