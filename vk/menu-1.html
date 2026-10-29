@@ -1,0 +1,140 @@
+<!doctype html><html><head><meta charset=utf-8><style>@font-face{font-family:Unbounded;font-weight:600;src:url(../node_modules/@fontsource/unbounded/files/unbounded-cyrillic-600-normal.woff2) format('woff2');unicode-range:U+0400-04FF}
+@font-face{font-family:Unbounded;font-weight:600;src:url(../node_modules/@fontsource/unbounded/files/unbounded-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:Manrope;font-weight:400;src:url(../node_modules/@fontsource/manrope/files/manrope-cyrillic-400-normal.woff2) format('woff2');unicode-range:U+0400-04FF}
+@font-face{font-family:Manrope;font-weight:400;src:url(../node_modules/@fontsource/manrope/files/manrope-latin-400-normal.woff2) format('woff2')}
+.art .bg { fill: #070C18; }
+.art .glass { fill: rgba(16, 24, 42, .82); stroke: rgba(148, 178, 255, .18); }
+.art .glass2 { fill: rgba(24, 34, 58, .92); stroke: rgba(148, 178, 255, .12); }
+.art .unit { fill: #1A2438; stroke: rgba(255, 255, 255, .06); }
+.art .hair { stroke: rgba(148, 178, 255, .1); }
+.art .ln { fill: rgba(255, 255, 255, .13); }
+.art .ln2 { fill: rgba(255, 255, 255, .26); }
+.art .tx { fill: #FFFFFF; }
+.art .ac { fill: var(--accent); }
+.art .ac2 { fill: var(--accent-2); }
+.art .wm { fill: var(--warm); }
+.art .stk { stroke: var(--accent); }
+.art text { font-family: Manrope, system-ui, sans-serif; }
+.art .t-strong { fill: #FFFFFF; font-size: 14px; font-weight: 700; }
+.art .t-strong-s { fill: #FFFFFF; font-size: 12px; font-weight: 700; }
+.art .t-muted { fill: #9AA8BF; font-size: 11.5px; }
+.art .t-ok { fill: #34D399; font-size: 12px; font-weight: 600; }
+.art .t-title { fill: #FFFFFF; font-family: Unbounded, Manrope, sans-serif; font-size: 15px; font-weight: 600; }
+.art .t-code { fill: var(--accent); font-family: ui-monospace, Menlo, monospace; font-size: 16px; font-weight: 700; }
+.art .t-mono { fill: #6E7C94; font-family: ui-monospace, Menlo, monospace; font-size: 8px; letter-spacing: .08em; }
+.art .t-status { fill: var(--accent); font-family: ui-monospace, Menlo, monospace; font-size: 9px; letter-spacing: .14em; }
+
+:root{--accent:#22D3EE;--accent-2:#3B82F6;--warm:#FF7A3D}
+*{box-sizing:border-box;margin:0}
+body{width:1920px;height:768px;background:#04060C;font-family:Manrope,sans-serif;color:#fff;overflow:hidden;position:relative}
+.g{position:absolute;border-radius:50%;filter:blur(50px)}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse 70% 80% at 60% 50%,#000,transparent 80%)}
+.wrap{position:absolute;left:370px;right:340px;top:0;bottom:0;display:flex;align-items:center;justify-content:space-between}
+.txt{width:700px}
+.logo svg{height:58px;width:auto}
+h1{font-family:Unbounded;font-weight:600;font-size:58px;line-height:1.08;letter-spacing:-.02em;margin-top:36px}
+.grad{background:linear-gradient(90deg,#c9f6ff,#22D3EE 45%,#3B82F6);-webkit-background-clip:text;color:transparent}
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.chips span{font-size:22px;font-weight:600;padding:11px 20px;border-radius:999px;border:1.5px solid rgba(148,178,255,.25);background:rgba(16,24,42,.6);color:#DCE6F5}
+.foot{margin-top:30px;font-size:24px;color:#9AA8BF} .foot b{color:#fff}
+.pics{position:relative;width:600px;height:540px}
+.pics .a{position:absolute;right:0;top:0;width:560px;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 60%,transparent 100%)}
+.pics .b{position:absolute;left:-40px;bottom:-10px;width:420px;opacity:.95;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 60%,transparent 100%)}
+.pics svg{width:100%;height:auto;display:block}
+*{box-sizing:border-box;margin:0}body{background:#04060C;font-family:Manrope,sans-serif;color:#fff;overflow:hidden;position:relative}
+.g{position:absolute;border-radius:50%;filter:blur(40px)}
+.grad{background:linear-gradient(90deg,#c9f6ff,#22D3EE 45%,#3B82F6);-webkit-background-clip:text;color:transparent}
+.logo svg{width:auto;display:block}.logo{color:#fff}
+.pic svg{width:100%;height:auto;display:block}
+body{width:752px;height:512px}
+.pic{position:absolute;right:-120px;top:-10px;width:620px;opacity:.85;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 40%,transparent 100%)}
+.shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,6,12,.9) 25%,rgba(4,6,12,0) 85%)}
+.logo{position:absolute;left:48px;top:44px}.logo svg{height:34px}
+h1{position:absolute;left:48px;right:48px;bottom:118px;font-family:Unbounded;font-weight:600;font-size:56px;line-height:1.05;letter-spacing:-.02em}
+p{position:absolute;left:48px;bottom:60px;font-size:26px;color:#9AA8BF}
+.bar{position:absolute;left:48px;bottom:36px;width:80px;height:5px;border-radius:3px;background:linear-gradient(90deg,#22D3EE,#3B82F6)}
+</style></head><body>
+<div class=g style="width:700px;height:700px;left:-250px;top:-350px;background:radial-gradient(circle,rgba(34,211,238,.3),transparent 65%)"></div>
+<div class=pic><svg class="art" viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="m1p-g1" cx="20%" cy="10%" r="70%"><stop offset="0" style="stop-color:var(--accent-2);stop-opacity:.45"/><stop offset="1" style="stop-color:var(--accent-2);stop-opacity:0"/></radialGradient>
+    <radialGradient id="m1p-g2" cx="95%" cy="95%" r="55%"><stop offset="0" style="stop-color:var(--warm);stop-opacity:.3"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <linearGradient id="m1p-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.4"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></linearGradient>
+    <filter id="m1p-glow" x="-60%" y="-60%" width="220%" height="220%"><feDropShadow dx="0" dy="0" stdDeviation="4" style="flood-color:var(--accent)" flood-opacity=".9"/></filter>
+    <filter id="m1p-wglow" x="-80%" y="-80%" width="260%" height="260%"><feDropShadow dx="0" dy="0" stdDeviation="5" style="flood-color:var(--warm)" flood-opacity=".9"/></filter>
+    <filter id="m1p-sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".6"/></filter>
+    <pattern id="m1p-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="rgba(148,178,255,.06)"/></pattern>
+    <clipPath id="m1p-map"><rect width="204" height="148" rx="14"/></clipPath>
+  </defs>
+  <rect width="640" height="400" class="bg"/>
+  <rect width="640" height="400" fill="url(#m1p-grid)"/>
+  <rect width="640" height="400" fill="url(#m1p-g1)"/>
+  <rect width="640" height="400" fill="url(#m1p-g2)"/>
+
+  <!-- поисковая выдача -->
+  <g transform="translate(36 44)" filter="url(#m1p-sh)">
+    <rect width="336" height="276" rx="14" class="glass"/>
+    <rect x="16" y="16" width="304" height="36" rx="18" class="glass2"/>
+    <circle cx="38" cy="33" r="7" fill="none" class="stk" stroke-width="2"/><line x1="43" y1="38" x2="48" y2="43" class="stk" stroke-width="2" stroke-linecap="round"/>
+    <text x="60" y="39" class="t-muted">разработка сайтов для бизнеса</text>
+
+    <rect x="10" y="64" width="316" height="52" rx="12" style="fill:var(--accent);fill-opacity:.1;stroke:var(--accent);stroke-opacity:.7"/>
+    <circle cx="30" cy="82" r="7" class="ac" filter="url(#m1p-glow)"/>
+    <rect x="44" y="78" width="150" height="8" rx="4" class="ac"/>
+    <rect x="44" y="92" width="80" height="4" rx="2" fill="#34D399"/>
+    <rect x="44" y="102" width="236" height="4" rx="2" class="ln2"/>
+
+    <g opacity=".75">
+      <circle cx="30" cy="136" r="7" class="ln2"/><rect x="44" y="132" width="170" height="7" rx="3.5" class="ac2"/><rect x="44" y="145" width="70" height="4" rx="2" class="ln"/><rect x="44" y="155" width="220" height="4" rx="2" class="ln"/>
+      <circle cx="30" cy="186" r="7" class="ln2"/><rect x="44" y="182" width="140" height="7" rx="3.5" class="ac2"/><rect x="44" y="195" width="90" height="4" rx="2" class="ln"/><rect x="44" y="205" width="200" height="4" rx="2" class="ln"/>
+      <circle cx="30" cy="236" r="7" class="ln2"/><rect x="44" y="232" width="160" height="7" rx="3.5" class="ac2"/><rect x="44" y="245" width="60" height="4" rx="2" class="ln"/><rect x="44" y="255" width="226" height="4" rx="2" class="ln"/>
+    </g>
+  </g>
+
+  <!-- график посещаемости -->
+  <g transform="translate(392 36)" filter="url(#m1p-sh)">
+    <rect width="216" height="150" rx="14" class="glass"/>
+    <text x="16" y="26" class="t-muted">Посещаемость</text>
+    <line x1="16" y1="64" x2="200" y2="64" class="hair"/><line x1="16" y1="96" x2="200" y2="96" class="hair"/><line x1="16" y1="128" x2="200" y2="128" class="hair"/>
+    <rect x="22" y="104" width="16" height="30" rx="4" class="ac2" opacity=".5"/>
+    <rect x="48" y="96" width="16" height="38" rx="4" class="ac2" opacity=".55"/>
+    <rect x="74" y="100" width="16" height="34" rx="4" class="ac2" opacity=".6"/>
+    <rect x="100" y="84" width="16" height="50" rx="4" class="ac2" opacity=".65"/>
+    <rect x="126" y="76" width="16" height="58" rx="4" class="ac2" opacity=".7"/>
+    <rect x="152" y="64" width="16" height="70" rx="4" class="ac2" opacity=".8"/>
+    <rect x="178" y="50" width="16" height="84" rx="4" class="ac" filter="url(#m1p-glow)"/>
+    <path d="M30 98 L56 90 L82 94 L108 78 L134 70 L160 58 L186 44" fill="none" class="stk" stroke-width="2" stroke-dasharray="3 4"/>
+  </g>
+
+  <!-- карта -->
+  <g transform="translate(404 206)" filter="url(#m1p-sh)">
+    <rect width="204" height="148" rx="14" class="glass"/>
+    <g clip-path="url(#m1p-map)" stroke="rgba(148,178,255,.16)" fill="none">
+      <path d="M-10 40 C40 50 80 30 120 44 S190 60 220 50" stroke-width="7"/>
+      <path d="M-10 110 C50 100 90 120 140 104 S200 96 220 100" stroke-width="5"/>
+      <path d="M60 -10 C66 40 52 90 70 160" stroke-width="5"/>
+      <path d="M150 -10 C140 50 160 100 150 160" stroke-width="4"/>
+      <path d="M0 76 H220" stroke-width="2"/>
+      <rect x="84" y="56" width="40" height="30" rx="4" fill="rgba(52,211,153,.08)" stroke="none"/>
+    </g>
+    <circle cx="104" cy="70" r="22" fill="none" style="stroke:var(--warm)" stroke-opacity=".35" stroke-width="2"/>
+    <circle cx="104" cy="70" r="34" fill="none" style="stroke:var(--warm)" stroke-opacity=".18" stroke-width="2"/>
+    <path d="M104 82 C96 72 92 66 92 60 A12 12 0 0 1 116 60 C116 66 112 72 104 82 Z" class="wm" filter="url(#m1p-wglow)"/>
+    <circle cx="104" cy="60" r="4.5" class="bg"/>
+    <rect x="44" y="104" width="120" height="28" rx="14" class="glass2"/>
+    <text x="104" y="122" text-anchor="middle" class="t-strong-s">Ваша компания</text>
+  </g>
+
+  <!-- цели и обращения -->
+  <g transform="translate(206 334)" filter="url(#m1p-sh)">
+    <rect width="182" height="50" rx="14" class="glass" style="stroke:var(--accent);stroke-opacity:.45"/>
+    <circle cx="26" cy="25" r="12" fill="none" class="stk" stroke-width="2"/>
+    <circle cx="26" cy="25" r="6" fill="none" class="stk" stroke-width="2"/>
+    <circle cx="26" cy="25" r="2" class="ac"/>
+    <text x="48" y="22" class="t-strong-s">Обращения</text>
+    <text x="48" y="38" class="t-muted">звонки и заявки</text>
+  </g>
+</svg>
+</div><div class=shade></div>
+<div class=logo><svg class="logo__svg" viewBox="4 3 996 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ИНТЕХ"><defs><linearGradient id="intech-lg-1" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#1FD1E8"/><stop offset="1" stop-color="#3B63F3"/></linearGradient></defs><path fill="url(#intech-lg-1)" d="M138 247L97 225L97 153L97 153L38 194L8 178L8 73L57 50L57 125L138 84L138 84ZM159 225L156 225L156 73L138 62L97 84L97 84L97 35L138 8L253 65L253 114L206 94L206 199Z"/><path fill="currentColor" d="M325 194L307 194L307 55L307 55L345 55L345 55L345 131L404 55L442 55L442 55L442 194L442 194L404 194L404 194L404 117L345 194ZM482 194L463 194L463 55L463 55L501 55L501 55L501 106L501 106L553 106L553 106L553 55L553 55L591 55L591 55L591 194L591 194L553 194L553 194L553 140L553 140L501 140L501 140L501 194ZM666 194L645 194L645 88L645 88L608 88L608 88L608 55L608 55L723 55L723 55L723 88L723 88L686 88L686 88L686 194ZM792 194L740 194L740 194L740 55L740 55L841 55L841 55L841 88L841 88L780 88L780 88L780 106L841 106L841 106L841 140L841 140L780 140L780 159L780 159L841 159L841 194ZM879 194L859 194L859 194L902 123L859 55L902 55L928 88L954 55L996 55L954 123L996 194L954 194L928 159L928 159L902 194Z"/></svg></div>
+<h1>Статьи</h1><p>полезное о сайтах и IT</p><div class=bar></div></body></html>

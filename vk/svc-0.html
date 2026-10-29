@@ -1,0 +1,129 @@
+<!doctype html><html><head><meta charset=utf-8><style>@font-face{font-family:Unbounded;font-weight:600;src:url(../node_modules/@fontsource/unbounded/files/unbounded-cyrillic-600-normal.woff2) format('woff2');unicode-range:U+0400-04FF}
+@font-face{font-family:Unbounded;font-weight:600;src:url(../node_modules/@fontsource/unbounded/files/unbounded-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:Manrope;font-weight:400;src:url(../node_modules/@fontsource/manrope/files/manrope-cyrillic-400-normal.woff2) format('woff2');unicode-range:U+0400-04FF}
+@font-face{font-family:Manrope;font-weight:400;src:url(../node_modules/@fontsource/manrope/files/manrope-latin-400-normal.woff2) format('woff2')}
+.art .bg { fill: #070C18; }
+.art .glass { fill: rgba(16, 24, 42, .82); stroke: rgba(148, 178, 255, .18); }
+.art .glass2 { fill: rgba(24, 34, 58, .92); stroke: rgba(148, 178, 255, .12); }
+.art .unit { fill: #1A2438; stroke: rgba(255, 255, 255, .06); }
+.art .hair { stroke: rgba(148, 178, 255, .1); }
+.art .ln { fill: rgba(255, 255, 255, .13); }
+.art .ln2 { fill: rgba(255, 255, 255, .26); }
+.art .tx { fill: #FFFFFF; }
+.art .ac { fill: var(--accent); }
+.art .ac2 { fill: var(--accent-2); }
+.art .wm { fill: var(--warm); }
+.art .stk { stroke: var(--accent); }
+.art text { font-family: Manrope, system-ui, sans-serif; }
+.art .t-strong { fill: #FFFFFF; font-size: 14px; font-weight: 700; }
+.art .t-strong-s { fill: #FFFFFF; font-size: 12px; font-weight: 700; }
+.art .t-muted { fill: #9AA8BF; font-size: 11.5px; }
+.art .t-ok { fill: #34D399; font-size: 12px; font-weight: 600; }
+.art .t-title { fill: #FFFFFF; font-family: Unbounded, Manrope, sans-serif; font-size: 15px; font-weight: 600; }
+.art .t-code { fill: var(--accent); font-family: ui-monospace, Menlo, monospace; font-size: 16px; font-weight: 700; }
+.art .t-mono { fill: #6E7C94; font-family: ui-monospace, Menlo, monospace; font-size: 8px; letter-spacing: .08em; }
+.art .t-status { fill: var(--accent); font-family: ui-monospace, Menlo, monospace; font-size: 9px; letter-spacing: .14em; }
+
+:root{--accent:#22D3EE;--accent-2:#3B82F6;--warm:#FF7A3D}
+*{box-sizing:border-box;margin:0}
+body{width:1920px;height:768px;background:#04060C;font-family:Manrope,sans-serif;color:#fff;overflow:hidden;position:relative}
+.g{position:absolute;border-radius:50%;filter:blur(50px)}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse 70% 80% at 60% 50%,#000,transparent 80%)}
+.wrap{position:absolute;left:370px;right:340px;top:0;bottom:0;display:flex;align-items:center;justify-content:space-between}
+.txt{width:700px}
+.logo svg{height:58px;width:auto}
+h1{font-family:Unbounded;font-weight:600;font-size:58px;line-height:1.08;letter-spacing:-.02em;margin-top:36px}
+.grad{background:linear-gradient(90deg,#c9f6ff,#22D3EE 45%,#3B82F6);-webkit-background-clip:text;color:transparent}
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.chips span{font-size:22px;font-weight:600;padding:11px 20px;border-radius:999px;border:1.5px solid rgba(148,178,255,.25);background:rgba(16,24,42,.6);color:#DCE6F5}
+.foot{margin-top:30px;font-size:24px;color:#9AA8BF} .foot b{color:#fff}
+.pics{position:relative;width:600px;height:540px}
+.pics .a{position:absolute;right:0;top:0;width:560px;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 60%,transparent 100%)}
+.pics .b{position:absolute;left:-40px;bottom:-10px;width:420px;opacity:.95;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 60%,transparent 100%)}
+.pics svg{width:100%;height:auto;display:block}
+*{box-sizing:border-box;margin:0}body{background:#04060C;font-family:Manrope,sans-serif;color:#fff;overflow:hidden;position:relative}
+.g{position:absolute;border-radius:50%;filter:blur(40px)}
+.grad{background:linear-gradient(90deg,#c9f6ff,#22D3EE 45%,#3B82F6);-webkit-background-clip:text;color:transparent}
+.logo svg{width:auto;display:block}.logo{color:#fff}
+.pic svg{width:100%;height:auto;display:block}
+body{width:1000px;height:1333px}
+.pic{position:absolute;left:70px;right:70px;top:200px;border-radius:28px;overflow:hidden;border:1.5px solid rgba(148,178,255,.18);box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.logo{position:absolute;left:80px;top:66px}.logo svg{height:44px}
+.tag{position:absolute;right:80px;top:68px;font-size:22px;font-weight:600;padding:8px 18px;border-radius:999px;border:1.5px solid rgba(34,211,238,.45);color:#9BEAF7}
+h1{position:absolute;left:80px;right:70px;top:900px;font-family:Unbounded;font-weight:600;font-size:60px;line-height:1.08;letter-spacing:-.02em}
+p{position:absolute;left:80px;right:70px;top:1030px;font-size:31px;color:#9AA8BF}
+.ft{position:absolute;left:80px;right:80px;bottom:90px;display:flex;align-items:center;justify-content:space-between;padding:26px 30px;border-radius:22px;border:1.5px solid rgba(148,178,255,.2);background:rgba(16,24,42,.6);font-size:30px;color:#9AA8BF}.ft b{color:#fff}.ft i{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#22D3EE,#3B82F6)}</style></head><body>
+<div class=g style="width:900px;height:900px;left:-300px;top:-400px;background:radial-gradient(circle,rgba(34,211,238,.28),transparent 65%)"></div>
+<div class=g style="width:900px;height:900px;right:-350px;bottom:-400px;background:radial-gradient(circle,rgba(59,130,246,.3),transparent 65%)"></div>
+<div class=logo><svg class="logo__svg" viewBox="4 3 996 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ИНТЕХ"><defs><linearGradient id="intech-lg-1" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#1FD1E8"/><stop offset="1" stop-color="#3B63F3"/></linearGradient></defs><path fill="url(#intech-lg-1)" d="M138 247L97 225L97 153L97 153L38 194L8 178L8 73L57 50L57 125L138 84L138 84ZM159 225L156 225L156 73L138 62L97 84L97 84L97 35L138 8L253 65L253 114L206 94L206 199Z"/><path fill="currentColor" d="M325 194L307 194L307 55L307 55L345 55L345 55L345 131L404 55L442 55L442 55L442 194L442 194L404 194L404 194L404 117L345 194ZM482 194L463 194L463 55L463 55L501 55L501 55L501 106L501 106L553 106L553 106L553 55L553 55L591 55L591 55L591 194L591 194L553 194L553 194L553 140L553 140L501 140L501 140L501 194ZM666 194L645 194L645 88L645 88L608 88L608 88L608 55L608 55L723 55L723 55L723 88L723 88L686 88L686 88L686 194ZM792 194L740 194L740 194L740 55L740 55L841 55L841 55L841 88L841 88L780 88L780 88L780 106L841 106L841 106L841 140L841 140L780 140L780 159L780 159L841 159L841 194ZM879 194L859 194L859 194L902 123L859 55L902 55L928 88L954 55L996 55L954 123L996 194L954 194L928 159L928 159L902 194Z"/></svg></div><div class=tag>Калининград</div>
+<div class=pic><svg class="art" viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="p0w-g1" cx="80%" cy="5%" r="75%"><stop offset="0" style="stop-color:var(--accent-2);stop-opacity:.55"/><stop offset="1" style="stop-color:var(--accent-2);stop-opacity:0"/></radialGradient>
+    <radialGradient id="p0w-g2" cx="0%" cy="100%" r="60%"><stop offset="0" style="stop-color:var(--warm);stop-opacity:.28"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <linearGradient id="p0w-img" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.95"/><stop offset="1" style="stop-color:var(--accent-2);stop-opacity:.7"/></linearGradient>
+    <filter id="p0w-glow" x="-60%" y="-60%" width="220%" height="220%"><feDropShadow dx="0" dy="0" stdDeviation="5" style="flood-color:var(--accent)" flood-opacity=".85"/></filter>
+    <filter id="p0w-sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".6"/></filter>
+    <pattern id="p0w-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="rgba(148,178,255,.06)"/></pattern>
+  </defs>
+  <rect width="640" height="400" class="bg"/>
+  <rect width="640" height="400" fill="url(#p0w-grid)"/>
+  <rect width="640" height="400" fill="url(#p0w-g1)"/>
+  <rect width="640" height="400" fill="url(#p0w-g2)"/>
+
+  <!-- окно браузера -->
+  <g transform="translate(64 44)" filter="url(#p0w-sh)">
+    <rect width="436" height="292" rx="14" class="glass"/>
+    <circle cx="20" cy="16" r="4.5" fill="#FF5F57"/><circle cx="35" cy="16" r="4.5" fill="#FEBC2E"/><circle cx="50" cy="16" r="4.5" fill="#28C840"/>
+    <rect x="120" y="8" width="196" height="16" rx="8" class="ln"/>
+    <rect x="130" y="14" width="80" height="4" rx="2" class="ln2"/>
+    <line x1="0" y1="32" x2="436" y2="32" class="hair"/>
+
+    <rect x="22" y="48" width="44" height="9" rx="4.5" class="ac" filter="url(#p0w-glow)"/>
+    <rect x="232" y="50" width="26" height="5" rx="2.5" class="ln2"/><rect x="266" y="50" width="26" height="5" rx="2.5" class="ln2"/><rect x="300" y="50" width="26" height="5" rx="2.5" class="ln2"/>
+    <rect x="344" y="44" width="70" height="17" rx="8.5" class="ac"/>
+
+    <rect x="22" y="86" width="176" height="15" rx="5" class="tx"/>
+    <rect x="22" y="108" width="140" height="15" rx="5" class="tx"/>
+    <rect x="22" y="130" width="96" height="15" rx="5" class="ac"/>
+    <rect x="22" y="158" width="176" height="5" rx="2.5" class="ln"/>
+    <rect x="22" y="169" width="148" height="5" rx="2.5" class="ln"/>
+    <rect x="22" y="186" width="88" height="24" rx="12" class="ac" filter="url(#p0w-glow)"/>
+    <rect x="118" y="186" width="72" height="24" rx="12" fill="none" class="stk"/>
+
+    <rect x="222" y="78" width="192" height="134" rx="12" fill="url(#p0w-img)"/>
+    <circle cx="370" cy="112" r="20" fill="rgba(255,255,255,.28)"/>
+    <path d="M222 212 L276 156 L306 184 L344 142 L414 212 Z" fill="rgba(4,8,18,.45)"/>
+
+    <g transform="translate(22 228)">
+      <rect width="122" height="48" rx="9" class="glass2"/><rect x="12" y="12" width="18" height="18" rx="5" class="ac" opacity=".85"/><rect x="38" y="14" width="60" height="5" rx="2.5" class="ln2"/><rect x="38" y="25" width="44" height="4" rx="2" class="ln"/>
+      <rect x="134" width="122" height="48" rx="9" class="glass2"/><rect x="146" y="12" width="18" height="18" rx="5" class="ac2" opacity=".85"/><rect x="172" y="14" width="60" height="5" rx="2.5" class="ln2"/><rect x="172" y="25" width="44" height="4" rx="2" class="ln"/>
+      <rect x="268" width="124" height="48" rx="9" class="glass2"/><rect x="280" y="12" width="18" height="18" rx="5" class="wm" opacity=".85"/><rect x="306" y="14" width="60" height="5" rx="2.5" class="ln2"/><rect x="306" y="25" width="44" height="4" rx="2" class="ln"/>
+    </g>
+  </g>
+
+  <!-- телефон -->
+  <g transform="translate(476 136)" filter="url(#p0w-sh)">
+    <rect width="116" height="230" rx="20" fill="#0B1120" stroke="rgba(148,178,255,.28)"/>
+    <rect x="6" y="6" width="104" height="218" rx="15" class="bg"/>
+    <rect x="42" y="12" width="32" height="6" rx="3" fill="#1E293B"/>
+    <rect x="18" y="30" width="30" height="7" rx="3.5" class="ac"/>
+    <rect x="18" y="50" width="80" height="10" rx="4" class="tx"/>
+    <rect x="18" y="65" width="62" height="10" rx="4" class="tx"/>
+    <rect x="18" y="84" width="78" height="4" rx="2" class="ln"/>
+    <rect x="18" y="93" width="58" height="4" rx="2" class="ln"/>
+    <rect x="18" y="108" width="58" height="18" rx="9" class="ac" filter="url(#p0w-glow)"/>
+    <rect x="18" y="136" width="80" height="52" rx="9" fill="url(#p0w-img)" opacity=".85"/>
+    <rect x="18" y="196" width="37" height="18" rx="6" class="glass2"/><rect x="61" y="196" width="37" height="18" rx="6" class="glass2"/>
+  </g>
+
+  <!-- уведомление о заявке -->
+  <g transform="translate(26 300)" filter="url(#p0w-sh)">
+    <rect width="200" height="56" rx="14" class="glass" style="stroke:var(--accent);stroke-opacity:.45"/>
+    <circle cx="28" cy="28" r="15" fill="rgba(52,211,153,.18)"/>
+    <path d="M21 28.5l5 5 9-10" fill="none" stroke="#34D399" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="52" y="25" class="t-strong">Новая заявка</text>
+    <text x="52" y="42" class="t-muted">с формы на сайте</text>
+  </g>
+</svg>
+</div>
+<h1>Создание сайтов</h1><p>лендинги, корпоративные сайты, магазины</p><div class=ft><span>Подробнее на <b>intex.click</b></span><i></i></div></body></html>
