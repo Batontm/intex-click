@@ -839,3 +839,8 @@ a.ccard:hover { transform: translateY(-4px); border-color: rgba(var(--accent-rgb
   .reveal { opacity: 1; transform: none; transition: none; }
   .sol.glass { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(10, 16, 30, .92); }
 }
+/* Ничего не должно расширять страницу по горизонтали (iPhone позволял «отдалить» страницу) */
+@supports (overflow: clip) {
+  html, body { overflow-x: clip; }
+}
+.ticker, .hero { contain: paint; }
