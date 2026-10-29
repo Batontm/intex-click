@@ -1,0 +1,214 @@
+<!doctype html><html><head><meta charset=utf-8><style>@font-face{font-family:Unbounded;font-weight:600;src:url(node_modules/@fontsource/unbounded/files/unbounded-cyrillic-600-normal.woff2) format('woff2');unicode-range:U+0400-04FF}
+@font-face{font-family:Unbounded;font-weight:600;src:url(node_modules/@fontsource/unbounded/files/unbounded-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:Manrope;font-weight:400;src:url(node_modules/@fontsource/manrope/files/manrope-cyrillic-400-normal.woff2) format('woff2');unicode-range:U+0400-04FF}
+@font-face{font-family:Manrope;font-weight:400;src:url(node_modules/@fontsource/manrope/files/manrope-latin-400-normal.woff2) format('woff2')}
+.art .bg { fill: #070C18; }
+.art .glass { fill: rgba(16, 24, 42, .82); stroke: rgba(148, 178, 255, .18); }
+.art .glass2 { fill: rgba(24, 34, 58, .92); stroke: rgba(148, 178, 255, .12); }
+.art .unit { fill: #1A2438; stroke: rgba(255, 255, 255, .06); }
+.art .hair { stroke: rgba(148, 178, 255, .1); }
+.art .ln { fill: rgba(255, 255, 255, .13); }
+.art .ln2 { fill: rgba(255, 255, 255, .26); }
+.art .tx { fill: #FFFFFF; }
+.art .ac { fill: var(--accent); }
+.art .ac2 { fill: var(--accent-2); }
+.art .wm { fill: var(--warm); }
+.art .stk { stroke: var(--accent); }
+.art text { font-family: Manrope, system-ui, sans-serif; }
+.art .t-strong { fill: #FFFFFF; font-size: 14px; font-weight: 700; }
+.art .t-strong-s { fill: #FFFFFF; font-size: 12px; font-weight: 700; }
+.art .t-muted { fill: #9AA8BF; font-size: 11.5px; }
+.art .t-ok { fill: #34D399; font-size: 12px; font-weight: 600; }
+.art .t-title { fill: #FFFFFF; font-family: Unbounded, Manrope, sans-serif; font-size: 15px; font-weight: 600; }
+.art .t-code { fill: var(--accent); font-family: ui-monospace, Menlo, monospace; font-size: 16px; font-weight: 700; }
+.art .t-mono { fill: #6E7C94; font-family: ui-monospace, Menlo, monospace; font-size: 8px; letter-spacing: .08em; }
+.art .t-status { fill: var(--accent); font-family: ui-monospace, Menlo, monospace; font-size: 9px; letter-spacing: .14em; }
+
+:root{--accent:#22D3EE;--accent-2:#3B82F6;--warm:#FF7A3D}
+*{box-sizing:border-box;margin:0}
+body{width:1920px;height:768px;background:#04060C;font-family:Manrope,sans-serif;color:#fff;overflow:hidden;position:relative}
+.g{position:absolute;border-radius:50%;filter:blur(50px)}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse 70% 80% at 60% 50%,#000,transparent 80%)}
+.wrap{position:absolute;left:90px;right:70px;top:0;bottom:70px;display:flex;align-items:center;justify-content:space-between}
+.txt{width:1000px;flex:none}
+.logo svg{height:70px;width:auto}
+h1{font-family:Unbounded;font-weight:600;font-size:80px;line-height:1.04;letter-spacing:-.02em;margin-top:26px}
+.grad{background:linear-gradient(90deg,#c9f6ff,#22D3EE 45%,#3B82F6);-webkit-background-clip:text;color:transparent}
+.chips{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.chips span{font-size:28px;font-weight:600;padding:13px 26px;border-radius:999px;border:1.5px solid rgba(148,178,255,.25);background:rgba(16,24,42,.6);color:#DCE6F5}
+.foot{margin-top:28px;font-size:30px;color:#9AA8BF} .foot b{color:#fff}
+.pics{position:relative;width:780px;height:700px;flex:none}
+.pics .a{position:absolute;right:-20px;top:0;width:740px;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 60%,transparent 100%)}
+.pics .b{position:absolute;left:-30px;bottom:-20px;width:540px;opacity:.95;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 60%,transparent 100%)}
+.pics svg{width:100%;height:auto;display:block}
+</style></head><body>
+<div class=g style="width:1100px;height:1100px;left:-350px;top:-550px;background:radial-gradient(circle,rgba(34,211,238,.32),transparent 65%)"></div>
+<div class=g style="width:1100px;height:1100px;right:-300px;top:-250px;background:radial-gradient(circle,rgba(59,130,246,.34),transparent 65%)"></div>
+<div class=g style="width:700px;height:700px;left:250px;bottom:-480px;background:radial-gradient(circle,rgba(255,122,61,.18),transparent 65%)"></div>
+<div class=grid></div>
+<div class=wrap>
+ <div class=txt><div class=logo><svg class="logo__svg" viewBox="4 3 996 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ИНТЕХ"><defs><linearGradient id="intech-lg-1" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#1FD1E8"/><stop offset="1" stop-color="#3B63F3"/></linearGradient></defs><path fill="url(#intech-lg-1)" d="M138 247L97 225L97 153L97 153L38 194L8 178L8 73L57 50L57 125L138 84L138 84ZM159 225L156 225L156 73L138 62L97 84L97 84L97 35L138 8L253 65L253 114L206 94L206 199Z"/><path fill="currentColor" d="M325 194L307 194L307 55L307 55L345 55L345 55L345 131L404 55L442 55L442 55L442 194L442 194L404 194L404 194L404 117L345 194ZM482 194L463 194L463 55L463 55L501 55L501 55L501 106L501 106L553 106L553 106L553 55L553 55L591 55L591 55L591 194L591 194L553 194L553 194L553 140L553 140L501 140L501 140L501 194ZM666 194L645 194L645 88L645 88L608 88L608 88L608 55L608 55L723 55L723 55L723 88L723 88L686 88L686 88L686 194ZM792 194L740 194L740 194L740 55L740 55L841 55L841 55L841 88L841 88L780 88L780 88L780 106L841 106L841 106L841 140L841 140L780 140L780 159L780 159L841 159L841 194ZM879 194L859 194L859 194L902 123L859 55L902 55L928 88L954 55L996 55L954 123L996 194L954 194L928 159L928 159L902 194Z"/></svg></div>
+  <h1>Сайты, SEO и <span class=grad>IT&#8209;сопровождение</span> бизнеса</h1>
+  <div class=chips><span>Создание сайтов</span><span>SEO и Яндекс Директ</span><span>Серверы и бэкапы</span><span>Сети и Wi‑Fi</span><span>IT‑обслуживание</span></div>
+  <div class=foot>Калининград и область · <b>intex.click</b></div>
+ </div>
+ <div class=pics><div class=a><svg class="art" viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="i-g1" cx="50%" cy="45%" r="55%"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.3"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></radialGradient>
+    <radialGradient id="i-g2" cx="100%" cy="100%" r="55%"><stop offset="0" style="stop-color:var(--accent-2);stop-opacity:.4"/><stop offset="1" style="stop-color:var(--accent-2);stop-opacity:0"/></radialGradient>
+    <linearGradient id="i-rack" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16203A"/><stop offset="1" stop-color="#0A1020"/></linearGradient>
+    <filter id="i-glow" x="-80%" y="-80%" width="260%" height="260%"><feDropShadow dx="0" dy="0" stdDeviation="3.5" style="flood-color:var(--accent)" flood-opacity=".95"/></filter>
+    <filter id="i-gglow" x="-80%" y="-80%" width="260%" height="260%"><feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#34D399" flood-opacity=".9"/></filter>
+    <filter id="i-sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".6"/></filter>
+    <pattern id="i-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="rgba(148,178,255,.06)"/></pattern>
+    <pattern id="i-vent" width="5" height="12" patternUnits="userSpaceOnUse"><rect width="2" height="12" fill="rgba(255,255,255,.09)"/></pattern>
+  </defs>
+  <rect width="640" height="400" class="bg"/>
+  <rect width="640" height="400" fill="url(#i-grid)"/>
+  <rect width="640" height="400" fill="url(#i-g1)"/>
+  <rect width="640" height="400" fill="url(#i-g2)"/>
+
+  <!-- линии связи -->
+  <g class="stk" fill="none" stroke-width="1.6" stroke-dasharray="5 6" opacity=".75">
+    <path d="M184 96 C220 96 222 104 252 104"/>
+    <path d="M388 116 C420 116 428 100 462 100"/>
+    <path d="M388 220 C424 220 440 226 478 226"/>
+    <path d="M252 262 C214 262 206 296 172 296"/>
+  </g>
+  <g filter="url(#i-glow)">
+    <circle cx="222" cy="99" r="3.5" class="ac"/>
+    <circle cx="428" cy="106" r="3.5" class="ac"/>
+    <circle cx="440" cy="223" r="3.5" class="ac"/>
+    <circle cx="208" cy="282" r="3.5" class="ac"/>
+  </g>
+
+  <!-- серверная стойка -->
+  <g transform="translate(252 48)" filter="url(#i-sh)">
+    <rect width="136" height="306" rx="12" fill="url(#i-rack)" stroke="rgba(148,178,255,.22)"/>
+    <rect x="8" y="8" width="120" height="290" rx="7" fill="rgba(0,0,0,.25)"/>
+    <g transform="translate(14 16)">
+      <rect width="108" height="26" rx="5" class="unit"/><rect x="34" y="7" width="52" height="12" fill="url(#i-vent)"/><circle cx="12" cy="13" r="3" fill="#34D399" filter="url(#i-gglow)"/><circle cx="22" cy="13" r="3" class="ac" filter="url(#i-glow)"/><text x="102" y="17" text-anchor="end" class="t-mono">SW</text>
+      <rect y="34" width="108" height="46" rx="5" class="unit"/><rect x="34" y="44" width="52" height="26" fill="url(#i-vent)"/><circle cx="12" cy="57" r="3" fill="#34D399" filter="url(#i-gglow)"/><circle cx="22" cy="57" r="3" fill="#34D399" filter="url(#i-gglow)"/><text x="102" y="61" text-anchor="end" class="t-mono">SRV</text>
+      <rect y="88" width="108" height="46" rx="5" class="unit"/><rect x="34" y="98" width="52" height="26" fill="url(#i-vent)"/><circle cx="12" cy="111" r="3" fill="#34D399" filter="url(#i-gglow)"/><circle cx="22" cy="111" r="3" class="ac" filter="url(#i-glow)"/><text x="102" y="115" text-anchor="end" class="t-mono">1С</text>
+      <rect y="142" width="108" height="26" rx="5" class="unit"/><rect x="34" y="149" width="52" height="12" fill="url(#i-vent)"/><circle cx="12" cy="155" r="3" fill="#34D399" filter="url(#i-gglow)"/><text x="102" y="159" text-anchor="end" class="t-mono">NAS</text>
+      <rect y="176" width="108" height="26" rx="5" class="unit"/><rect x="34" y="183" width="52" height="12" fill="url(#i-vent)"/><circle cx="12" cy="189" r="3" class="ac" filter="url(#i-glow)"/><text x="102" y="193" text-anchor="end" class="t-mono">FW</text>
+      <rect y="210" width="108" height="46" rx="5" class="unit"/><rect x="34" y="220" width="52" height="26" fill="url(#i-vent)"/><circle cx="12" cy="233" r="3" fill="#34D399" filter="url(#i-gglow)"/><text x="102" y="237" text-anchor="end" class="t-mono">UPS</text>
+    </g>
+    <text x="68" y="292" text-anchor="middle" class="t-status">● ONLINE</text>
+  </g>
+
+  <!-- роутер и Wi-Fi -->
+  <g transform="translate(70 72)" filter="url(#i-sh)">
+    <line x1="22" y1="0" x2="18" y2="-18" stroke="rgba(148,178,255,.45)" stroke-width="3" stroke-linecap="round"/>
+    <line x1="92" y1="0" x2="96" y2="-18" stroke="rgba(148,178,255,.45)" stroke-width="3" stroke-linecap="round"/>
+    <rect width="114" height="46" rx="10" class="glass2"/>
+    <circle cx="20" cy="23" r="3" fill="#34D399" filter="url(#i-gglow)"/><circle cx="32" cy="23" r="3" class="ac" filter="url(#i-glow)"/><circle cx="44" cy="23" r="3" class="ac" filter="url(#i-glow)"/>
+    <rect x="62" y="18" width="38" height="10" fill="url(#i-vent)"/>
+  </g>
+  <g transform="translate(127 34)" class="stk" fill="none" stroke-width="2" stroke-linecap="round" filter="url(#i-glow)">
+    <path d="M-10 0 A14 14 0 0 1 10 0"/>
+    <path d="M-18 -8 A26 26 0 0 1 18 -8" opacity=".7"/>
+  </g>
+
+  <!-- ноутбук -->
+  <g transform="translate(76 268)" filter="url(#i-sh)">
+    <rect width="96" height="60" rx="7" class="glass2"/>
+    <rect x="8" y="8" width="80" height="44" rx="4" class="bg"/>
+    <rect x="16" y="16" width="30" height="5" rx="2.5" class="ac"/><rect x="16" y="27" width="56" height="4" rx="2" class="ln"/><rect x="16" y="36" width="44" height="4" rx="2" class="ln"/>
+    <path d="M-10 60 H106 L98 70 H-2 Z" fill="#8892A6"/>
+  </g>
+
+  <!-- мониторы -->
+  <g transform="translate(462 70)" filter="url(#i-sh)">
+    <rect width="104" height="64" rx="7" class="glass2"/>
+    <rect x="8" y="8" width="88" height="48" rx="4" class="bg"/>
+    <rect x="16" y="16" width="20" height="32" rx="3" class="ln"/><rect x="42" y="16" width="46" height="14" rx="3" class="ac" opacity=".7"/><rect x="42" y="34" width="46" height="14" rx="3" class="ln"/>
+    <rect x="46" y="64" width="12" height="12" fill="#5B657A"/><rect x="32" y="76" width="40" height="5" rx="2.5" fill="#8892A6"/>
+  </g>
+  <g transform="translate(478 196)" filter="url(#i-sh)">
+    <rect width="104" height="64" rx="7" class="glass2"/>
+    <rect x="8" y="8" width="88" height="48" rx="4" class="bg"/>
+    <path d="M16 46 L32 36 L44 40 L58 26 L72 30 L88 18" fill="none" class="stk" stroke-width="2"/>
+    <rect x="46" y="64" width="12" height="12" fill="#5B657A"/><rect x="32" y="76" width="40" height="5" rx="2.5" fill="#8892A6"/>
+  </g>
+
+  <!-- резервная копия -->
+  <g transform="translate(420 312)" filter="url(#i-sh)">
+    <rect width="200" height="58" rx="14" class="glass" style="stroke:#34D399;stroke-opacity:.45"/>
+    <path d="M28 14 L42 19 V29 C42 37 36 42 28 45 C20 42 14 37 14 29 V19 Z" fill="rgba(52,211,153,.15)" stroke="#34D399" stroke-width="1.8"/>
+    <path d="M22.5 29 L26.5 33 L34 25" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="54" y="26" class="t-strong">Резервная копия</text>
+    <text x="54" y="43" class="t-ok">выполнена</text>
+  </g>
+</svg>
+</div><div class=b><svg class="art" viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="w-g1" cx="80%" cy="5%" r="75%"><stop offset="0" style="stop-color:var(--accent-2);stop-opacity:.55"/><stop offset="1" style="stop-color:var(--accent-2);stop-opacity:0"/></radialGradient>
+    <radialGradient id="w-g2" cx="0%" cy="100%" r="60%"><stop offset="0" style="stop-color:var(--warm);stop-opacity:.28"/><stop offset="1" style="stop-color:var(--warm);stop-opacity:0"/></radialGradient>
+    <linearGradient id="w-img" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.95"/><stop offset="1" style="stop-color:var(--accent-2);stop-opacity:.7"/></linearGradient>
+    <filter id="w-glow" x="-60%" y="-60%" width="220%" height="220%"><feDropShadow dx="0" dy="0" stdDeviation="5" style="flood-color:var(--accent)" flood-opacity=".85"/></filter>
+    <filter id="w-sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".6"/></filter>
+    <pattern id="w-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="rgba(148,178,255,.06)"/></pattern>
+  </defs>
+  <rect width="640" height="400" class="bg"/>
+  <rect width="640" height="400" fill="url(#w-grid)"/>
+  <rect width="640" height="400" fill="url(#w-g1)"/>
+  <rect width="640" height="400" fill="url(#w-g2)"/>
+
+  <!-- окно браузера -->
+  <g transform="translate(64 44)" filter="url(#w-sh)">
+    <rect width="436" height="292" rx="14" class="glass"/>
+    <circle cx="20" cy="16" r="4.5" fill="#FF5F57"/><circle cx="35" cy="16" r="4.5" fill="#FEBC2E"/><circle cx="50" cy="16" r="4.5" fill="#28C840"/>
+    <rect x="120" y="8" width="196" height="16" rx="8" class="ln"/>
+    <rect x="130" y="14" width="80" height="4" rx="2" class="ln2"/>
+    <line x1="0" y1="32" x2="436" y2="32" class="hair"/>
+
+    <rect x="22" y="48" width="44" height="9" rx="4.5" class="ac" filter="url(#w-glow)"/>
+    <rect x="232" y="50" width="26" height="5" rx="2.5" class="ln2"/><rect x="266" y="50" width="26" height="5" rx="2.5" class="ln2"/><rect x="300" y="50" width="26" height="5" rx="2.5" class="ln2"/>
+    <rect x="344" y="44" width="70" height="17" rx="8.5" class="ac"/>
+
+    <rect x="22" y="86" width="176" height="15" rx="5" class="tx"/>
+    <rect x="22" y="108" width="140" height="15" rx="5" class="tx"/>
+    <rect x="22" y="130" width="96" height="15" rx="5" class="ac"/>
+    <rect x="22" y="158" width="176" height="5" rx="2.5" class="ln"/>
+    <rect x="22" y="169" width="148" height="5" rx="2.5" class="ln"/>
+    <rect x="22" y="186" width="88" height="24" rx="12" class="ac" filter="url(#w-glow)"/>
+    <rect x="118" y="186" width="72" height="24" rx="12" fill="none" class="stk"/>
+
+    <rect x="222" y="78" width="192" height="134" rx="12" fill="url(#w-img)"/>
+    <circle cx="370" cy="112" r="20" fill="rgba(255,255,255,.28)"/>
+    <path d="M222 212 L276 156 L306 184 L344 142 L414 212 Z" fill="rgba(4,8,18,.45)"/>
+
+    <g transform="translate(22 228)">
+      <rect width="122" height="48" rx="9" class="glass2"/><rect x="12" y="12" width="18" height="18" rx="5" class="ac" opacity=".85"/><rect x="38" y="14" width="60" height="5" rx="2.5" class="ln2"/><rect x="38" y="25" width="44" height="4" rx="2" class="ln"/>
+      <rect x="134" width="122" height="48" rx="9" class="glass2"/><rect x="146" y="12" width="18" height="18" rx="5" class="ac2" opacity=".85"/><rect x="172" y="14" width="60" height="5" rx="2.5" class="ln2"/><rect x="172" y="25" width="44" height="4" rx="2" class="ln"/>
+      <rect x="268" width="124" height="48" rx="9" class="glass2"/><rect x="280" y="12" width="18" height="18" rx="5" class="wm" opacity=".85"/><rect x="306" y="14" width="60" height="5" rx="2.5" class="ln2"/><rect x="306" y="25" width="44" height="4" rx="2" class="ln"/>
+    </g>
+  </g>
+
+  <!-- телефон -->
+  <g transform="translate(476 136)" filter="url(#w-sh)">
+    <rect width="116" height="230" rx="20" fill="#0B1120" stroke="rgba(148,178,255,.28)"/>
+    <rect x="6" y="6" width="104" height="218" rx="15" class="bg"/>
+    <rect x="42" y="12" width="32" height="6" rx="3" fill="#1E293B"/>
+    <rect x="18" y="30" width="30" height="7" rx="3.5" class="ac"/>
+    <rect x="18" y="50" width="80" height="10" rx="4" class="tx"/>
+    <rect x="18" y="65" width="62" height="10" rx="4" class="tx"/>
+    <rect x="18" y="84" width="78" height="4" rx="2" class="ln"/>
+    <rect x="18" y="93" width="58" height="4" rx="2" class="ln"/>
+    <rect x="18" y="108" width="58" height="18" rx="9" class="ac" filter="url(#w-glow)"/>
+    <rect x="18" y="136" width="80" height="52" rx="9" fill="url(#w-img)" opacity=".85"/>
+    <rect x="18" y="196" width="37" height="18" rx="6" class="glass2"/><rect x="61" y="196" width="37" height="18" rx="6" class="glass2"/>
+  </g>
+
+  <!-- уведомление о заявке -->
+  <g transform="translate(26 300)" filter="url(#w-sh)">
+    <rect width="200" height="56" rx="14" class="glass" style="stroke:var(--accent);stroke-opacity:.45"/>
+    <circle cx="28" cy="28" r="15" fill="rgba(52,211,153,.18)"/>
+    <path d="M21 28.5l5 5 9-10" fill="none" stroke="#34D399" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="52" y="25" class="t-strong">Новая заявка</text>
+    <text x="52" y="42" class="t-muted">с формы на сайте</text>
+  </g>
+</svg>
+</div></div>
+</div></body></html>
