@@ -827,3 +827,15 @@ a.ccard:hover { transform: translateY(-4px); border-color: rgba(var(--accent-rgb
 .contact__phones .contact__socials { font-size: 15px; margin-top: 4px; }
 .contact__phones .contact__socials a { font-family: inherit; font-size: inherit; color: var(--white); }
 .contact__phones .contact__socials a:hover { color: var(--accent); }
+/* Мобильные: карточки «Почему это важно» в одну колонку, чтобы слова не наезжали */
+@media (max-width: 560px) {
+  .problem__metrics { grid-template-columns: 1fr; gap: 10px; }
+  .metric { padding: 18px 20px; }
+  .metric b { font-size: 28px; }
+}
+/* Телефоны и планшеты: блоки показываются сразу, без анимации появления
+   (на iPhone карточки решений могли остаться невидимыми) */
+@media (max-width: 900px), (hover: none) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .sol.glass { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(10, 16, 30, .92); }
+}
