@@ -844,3 +844,7 @@ a.ccard:hover { transform: translateY(-4px); border-color: rgba(var(--accent-rgb
   html, body { overflow-x: clip; }
 }
 .ticker, .hero { contain: paint; }
+/* iPhone: картинка решения раздувала карточку — колонка не шире экрана */
+@media (max-width: 860px) { .solutions { grid-template-columns: minmax(0, 1fr); } }
+.sol, .sol__art { min-width: 0; }
+svg.art { display: block; max-width: 100%; }
