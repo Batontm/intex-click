@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'INTECH_VERSION', '2.8.0' );
+define( 'INTECH_VERSION', '2.8.1' );
 
 require_once get_template_directory() . '/inc/landings.php';
 require_once get_template_directory() . '/inc/legal.php';
@@ -15,6 +15,7 @@ require_once get_template_directory() . '/inc/logo.php';
 require_once get_template_directory() . '/inc/contacts.php';
 require_once get_template_directory() . '/inc/articles.php';
 require_once get_template_directory() . '/inc/metrika.php';
+require_once get_template_directory() . '/inc/smtp.php';
 
 /* ---------- Базовая настройка темы ---------- */
 add_action( 'after_setup_theme', function () {
@@ -197,14 +198,14 @@ function intech_handle_lead() {
 	if ( $email ) {
 		$headers[] = 'Reply-To: ' . $email;
 	}
-	wp_mail( $to, $subject, $body, $headers );
+	$sent = wp_mail( $to, $subject, $body, $headers );
 
 	// Копия заявки в базе (на случай, если почта не настроена).
 	wp_insert_post( array(
 		'post_type'    => 'intech_lead',
 		'post_status'  => 'private',
 		'post_title'   => $name ? $name . ' — ' . $phone : 'Заявка ' . current_time( 'mysql' ),
-		'post_content' => $body,
+		'post_content' => $body . "\n" . ( $sent ? 'Письмо отправлено на ' . $to : 'Письмо НЕ отправлено — проверьте настройки почты' ),
 	) );
 
 	wp_safe_redirect( add_query_arg( 'sent', '1', home_url( '/' ) ) . '#contacts' );
