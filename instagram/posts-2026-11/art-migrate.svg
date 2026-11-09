@@ -1,0 +1,75 @@
+<svg class="art" viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="m-g1" cx="78%" cy="30%" r="60%"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.30"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></radialGradient>
+    <radialGradient id="m-g2" cx="5%" cy="95%" r="55%"><stop offset="0" style="stop-color:var(--accent-2);stop-opacity:.32"/><stop offset="1" style="stop-color:var(--accent-2);stop-opacity:0"/></radialGradient>
+    <linearGradient id="m-rack" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16203A"/><stop offset="1" stop-color="#0A1020"/></linearGradient>
+    <filter id="m-glow" x="-80%" y="-80%" width="260%" height="260%"><feDropShadow dx="0" dy="0" stdDeviation="3.5" style="flood-color:var(--accent)" flood-opacity=".95"/></filter>
+    <filter id="m-gglow" x="-80%" y="-80%" width="260%" height="260%"><feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#34D399" flood-opacity=".9"/></filter>
+    <filter id="m-sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".6"/></filter>
+    <pattern id="m-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="rgba(148,178,255,.06)"/></pattern>
+  </defs>
+  <rect width="640" height="400" class="bg"/>
+  <rect width="640" height="400" fill="url(#m-grid)"/>
+  <rect width="640" height="400" fill="url(#m-g1)"/>
+  <rect width="640" height="400" fill="url(#m-g2)"/>
+
+  <!-- домен -->
+  <g transform="translate(232 26)" filter="url(#m-sh)">
+    <rect width="176" height="40" rx="20" class="glass" style="stroke:var(--accent);stroke-opacity:.5"/>
+    <circle cx="22" cy="20" r="7" fill="none" class="stk" stroke-width="2"/>
+    <path d="M15 20h14M22 13c-3 4-3 10 0 14M22 13c3 4 3 10 0 14" fill="none" class="stk" stroke-width="1.4"/>
+    <text x="38" y="25" class="t-strong">intex.click</text>
+    <text x="126" y="25" class="t-status">DNS</text>
+  </g>
+  <path d="M320 66 C 320 96, 470 92, 470 112" fill="none" class="stk" stroke-width="2" stroke-dasharray="5 6" opacity=".8"/>
+  <circle cx="470" cy="112" r="4" class="ac" filter="url(#m-glow)"/>
+
+  <!-- старый хостинг -->
+  <g transform="translate(48 118)" opacity=".62">
+    <rect width="132" height="176" rx="14" fill="url(#m-rack)" stroke="rgba(148,178,255,.14)"/>
+    <g transform="translate(14 16)">
+      <rect width="104" height="30" rx="6" class="unit"/><circle cx="14" cy="15" r="3.5" fill="#64748B"/><rect x="28" y="12" width="44" height="6" rx="3" class="ln"/>
+      <rect y="40" width="104" height="30" rx="6" class="unit"/><circle cx="14" cy="55" r="3.5" fill="#64748B"/><rect x="28" y="52" width="44" height="6" rx="3" class="ln"/>
+      <rect y="80" width="104" height="30" rx="6" class="unit"/><circle cx="14" cy="95" r="3.5" fill="#64748B"/><rect x="28" y="92" width="44" height="6" rx="3" class="ln"/>
+    </g>
+    <text x="66" y="160" text-anchor="middle" class="t-mono">OLD HOSTING</text>
+  </g>
+
+  <!-- перенос данных -->
+  <path d="M190 206 C 250 206, 300 206, 398 206" fill="none" class="stk" stroke-width="2.2" stroke-dasharray="6 7"/>
+  <g filter="url(#m-glow)">
+    <circle cx="232" cy="206" r="4.5" class="ac"/><circle cx="292" cy="206" r="4.5" class="ac"/><circle cx="352" cy="206" r="4.5" class="ac"/>
+  </g>
+  <path d="M392 198 l12 8 -12 8" fill="none" class="stk" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(236 168)">
+    <rect width="114" height="24" rx="12" class="glass2"/>
+    <text x="57" y="16" text-anchor="middle" class="t-muted">файлы + база</text>
+  </g>
+
+  <!-- новый хостинг -->
+  <g transform="translate(410 118)" filter="url(#m-sh)">
+    <rect width="150" height="206" rx="16" fill="url(#m-rack)" style="stroke:var(--accent);stroke-opacity:.45"/>
+    <g transform="translate(16 18)">
+      <rect width="118" height="32" rx="7" class="unit"/><circle cx="15" cy="16" r="4" fill="#34D399" filter="url(#m-gglow)"/><circle cx="28" cy="16" r="4" class="ac"/><rect x="42" y="13" width="48" height="6" rx="3" class="ln2"/><text x="112" y="20" text-anchor="end" class="t-mono">WEB</text>
+      <rect y="42" width="118" height="32" rx="7" class="unit"/><circle cx="15" cy="58" r="4" fill="#34D399" filter="url(#m-gglow)"/><rect x="28" y="55" width="48" height="6" rx="3" class="ln2"/><text x="112" y="62" text-anchor="end" class="t-mono">SQL</text>
+      <rect y="84" width="118" height="32" rx="7" class="unit"/><circle cx="15" cy="100" r="4" fill="#34D399" filter="url(#m-gglow)"/><rect x="28" y="97" width="48" height="6" rx="3" class="ln2"/><text x="112" y="104" text-anchor="end" class="t-mono">SSL</text>
+      <rect y="126" width="118" height="32" rx="7" class="unit"/><circle cx="15" cy="142" r="4" class="ac"/><rect x="28" y="139" width="48" height="6" rx="3" class="ln2"/><text x="112" y="146" text-anchor="end" class="t-mono">BAK</text>
+    </g>
+    <circle cx="52" cy="188" r="3" class="ac"/><text x="62" y="191" class="t-status">ONLINE</text>
+  </g>
+
+  <!-- чек-лист -->
+  <g transform="translate(30 312)" filter="url(#m-sh)">
+    <rect width="350" height="70" rx="14" class="glass" style="stroke:var(--accent);stroke-opacity:.35"/>
+    <g transform="translate(16 14)">
+      <circle cx="8" cy="8" r="8" fill="rgba(52,211,153,.18)"/><path d="M4 8.5l3 3 5-6" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="24" y="12.5" class="t-strong-s">Почта (MX) на месте</text>
+      <circle cx="8" cy="32" r="8" fill="rgba(52,211,153,.18)"/><path d="M4 32.5l3 3 5-6" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="24" y="36.5" class="t-strong-s">HTTPS и редиректы 301</text>
+      <circle cx="200" cy="8" r="8" fill="rgba(52,211,153,.18)"/><path d="M196 8.5l3 3 5-6" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="216" y="12.5" class="t-strong-s">Копия сайта</text>
+      <circle cx="200" cy="32" r="8" fill="rgba(52,211,153,.18)"/><path d="M196 32.5l3 3 5-6" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="216" y="36.5" class="t-strong-s">Форма заявок</text>
+    </g>
+  </g>
+</svg>
