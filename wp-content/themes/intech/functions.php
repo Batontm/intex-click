@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'INTECH_VERSION', '2.7.6' );
+define( 'INTECH_VERSION', '2.8.0' );
 
 require_once get_template_directory() . '/inc/landings.php';
 require_once get_template_directory() . '/inc/legal.php';
@@ -77,7 +77,7 @@ add_action( 'customize_register', function ( $wp_customize ) {
 	) );
 	$wp_customize->add_control( new WP_Customize_Upload_Control( $wp_customize, 'intech_hero_video', array(
 		'label'       => 'Видео на первом экране (MP4)',
-		'description' => 'Загрузите ролик или вставьте ссылку. Если пусто — берётся assets/video/hero.mp4 из темы.',
+		'description' => 'Загрузите ролик или вставьте ссылку. Если пусто — берутся assets/video/hero.webm и hero.mp4 из темы (и заставка hero.jpg). На телефонах видео не загружается.',
 		'section'     => 'intech',
 		'mime_type'   => 'video',
 	) ) );
@@ -110,16 +110,39 @@ function intech_opt( $key, $fallback = '' ) {
 	return '' === $v ? $fallback : $v;
 }
 
-/** URL видео первого экрана: из настроек или файл в теме. */
-function intech_hero_video_url() {
-	$url = get_theme_mod( 'intech_hero_video', '' );
-	if ( $url ) {
-		return $url;
+/**
+ * Видео первого экрана: источники и заставка.
+ *
+ * Берёт ролик из настроек темы или файлы assets/video/hero.webm, hero.mp4
+ * и заставку hero.jpg. Возвращает null, если видео нет.
+ *
+ * @return array{sources: array<int, array{src: string, type: string}>, poster: string}|null
+ */
+function intech_hero_video() {
+	$dir     = get_template_directory() . '/assets/video/';
+	$uri     = get_template_directory_uri() . '/assets/video/';
+	$file    = function ( $name ) use ( $dir, $uri ) {
+		return file_exists( $dir . $name ) ? $uri . $name . '?v=' . filemtime( $dir . $name ) : '';
+	};
+	$sources = array();
+
+	$custom = get_theme_mod( 'intech_hero_video', '' );
+	if ( $custom ) {
+		$sources[] = array( 'src' => $custom, 'type' => 'video/mp4' );
+	} else {
+		// WebM обычно легче, поэтому идёт первым; MP4 — для старых iPhone.
+		if ( $webm = $file( 'hero.webm' ) ) {
+			$sources[] = array( 'src' => $webm, 'type' => 'video/webm' );
+		}
+		if ( $mp4 = $file( 'hero.mp4' ) ) {
+			$sources[] = array( 'src' => $mp4, 'type' => 'video/mp4' );
+		}
 	}
-	if ( file_exists( get_template_directory() . '/assets/video/hero.mp4' ) ) {
-		return get_template_directory_uri() . '/assets/video/hero.mp4';
+
+	if ( ! $sources ) {
+		return null;
 	}
-	return '';
+	return array( 'sources' => $sources, 'poster' => $file( 'hero.jpg' ) );
 }
 
 /* ---------- Иконки (линейные SVG) ---------- */

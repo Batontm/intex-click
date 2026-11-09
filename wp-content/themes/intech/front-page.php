@@ -4,7 +4,7 @@
  */
 get_header();
 
-$video = intech_hero_video_url();
+$video = intech_hero_video();
 $phone = intech_opt( 'intech_phone', '+7 (931) 605-44-84' );
 $wa    = intech_opt( 'intech_wa', 'https://wa.me/79316054484' );
 
@@ -76,8 +76,18 @@ $faq = array(
 <section class="hero" id="top">
 	<div class="hero__bg" aria-hidden="true">
 		<?php if ( $video ) : ?>
-			<video class="hero__video" autoplay muted loop playsinline preload="metadata">
-				<source src="<?php echo esc_url( $video ); ?>" type="video/mp4">
+			<?php
+			/*
+			 * Источники лежат в data-атрибутах: main.js подставляет их только на
+			 * широких экранах, без «экономии трафика» и «уменьшения движения».
+			 * На телефонах ролик и заставка не скачиваются вовсе.
+			 */
+			?>
+			<video class="hero__video" muted loop playsinline preload="none" disablepictureinpicture tabindex="-1"
+				<?php if ( $video['poster'] ) : ?>data-poster="<?php echo esc_url( $video['poster'] ); ?>"<?php endif; ?>>
+				<?php foreach ( $video['sources'] as $s ) : ?>
+					<source data-src="<?php echo esc_url( $s['src'] ); ?>" type="<?php echo esc_attr( $s['type'] ); ?>">
+				<?php endforeach; ?>
 			</video>
 		<?php endif; ?>
 		<div class="hero__glow hero__glow--a"></div>

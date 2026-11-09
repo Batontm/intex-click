@@ -172,4 +172,37 @@
     });
     frame();
   }
+
+  // --- Видео на фоне первого экрана ---
+  // Грузим только на широких экранах и без «экономии трафика» / «уменьшения движения».
+  // Пока первый экран не виден, ролик стоит на паузе.
+  var video = document.querySelector('.hero__video');
+  var conn = navigator.connection || {};
+  var wide = window.matchMedia && window.matchMedia('(min-width: 768px)').matches;
+  if (video && wide && !reduce && !conn.saveData) {
+    if (video.dataset.poster) video.poster = video.dataset.poster;
+    Array.prototype.forEach.call(video.querySelectorAll('source[data-src]'), function (s) { s.src = s.dataset.src; });
+    video.muted = true;
+    video.addEventListener('playing', function () { video.classList.add('is-on'); }, { once: true });
+    video.load();
+
+    var inView = true;
+    var play = function () {
+      if (!inView || document.hidden) return;
+      var p = video.play(); if (p && p.catch) p.catch(function () {});
+    };
+    // Повтор, когда ролик догрузился: первый play() мог не сработать в фоновой вкладке.
+    video.addEventListener('canplay', play);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        inView = entries[0].isIntersecting;
+        if (inView) play(); else video.pause();
+      }).observe(video.closest('.hero') || video);
+    } else {
+      play();
+    }
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) video.pause(); else play();
+    });
+  }
 })();
