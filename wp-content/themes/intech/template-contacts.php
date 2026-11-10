@@ -18,11 +18,11 @@ get_header();
 	<p class="hero__lead">Позвоните, напишите на почту, в Telegram или MAX либо оставьте заявку — ответим в течение рабочего дня. Работаем по Калининграду и Калининградской области.</p>
 
 	<div class="cards4">
-		<div class="ccard glass spot reveal">
+		<a class="ccard glass spot reveal" href="<?php echo esc_attr( intech_tel() ); ?>" aria-label="Позвонить в ИНТЕХ">
 			<span class="svc__icon"><?php echo intech_icon( 'support' ); // phpcs:ignore ?></span>
 			<span class="ccard__label">Телефон</span>
-			<span class="ccard__value"><?php echo intech_phone_link(); // phpcs:ignore WordPress.Security.EscapeOutput ?></span>
-		</div>
+			<span class="ccard__value">Позвонить →</span>
+		</a>
 		<a class="ccard glass spot reveal" href="mailto:<?php echo esc_attr( intech_email() ); ?>">
 			<span class="svc__icon"><?php echo intech_icon( 'smm' ); // phpcs:ignore ?></span>
 			<span class="ccard__label">Почта</span>

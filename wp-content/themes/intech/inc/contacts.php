@@ -62,13 +62,17 @@ function intech_has_instagram() {
  * @param string $text   Подпись.
  * @param bool   $button true — синяя кнопка (как «Связаться»), false — обычная ссылка в тексте.
  */
+/** Ссылка для звонка: tel:+7… */
+function intech_tel() {
+	return 'tel:' . preg_replace( '/[^0-9+]/', '', intech_opt( 'intech_phone', '+7 (931) 605-44-84' ) );
+}
+
 function intech_phone_link( $class = '', $text = 'Позвонить', $button = true ) {
-	$tel  = preg_replace( '/[^0-9+]/', '', intech_opt( 'intech_phone', '+7 (931) 605-44-84' ) );
 	$base = $button ? 'btn btn--accent btn--sm call-btn' : 'call-link';
 	return sprintf(
 		'<a class="%1$s" href="%2$s" aria-label="Позвонить в ИНТЕХ">%3$s</a>',
 		esc_attr( trim( $base . ' ' . $class ) ),
-		esc_attr( 'tel:' . $tel ),
+		esc_attr( intech_tel() ),
 		esc_html( $text )
 	);
 }
