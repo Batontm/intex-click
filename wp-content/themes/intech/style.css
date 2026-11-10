@@ -497,6 +497,14 @@ p { margin: 0; }
 @media (max-width: 1100px) {
   .scene { min-height: 460px; }
 }
+/* Телефоны и планшеты: меньше наклона и глубины, панели внутри экрана
+   (с перспективой «Аналитика / Заявки» уезжала за левый край) */
+@media (max-width: 900px) {
+  .scene__rig { transform: rotateX(6deg) rotateY(-6deg); }
+  .fl--a { left: 2%; top: 18%; transform: translateZ(30px); }
+  .fl--b { right: 2%; top: 16%; transform: translateZ(20px); }
+  .fl--c { left: 50%; top: -10%; translate: -50% 0; transform: translateZ(40px); animation: none; }
+}
 @media (max-width: 640px) {
   :root { --gutter: 18px; }
   .section { padding-top: 96px; }
@@ -517,6 +525,8 @@ p { margin: 0; }
   .h2 { font-size: 23px; }
   .stat { padding: 24px; }
   .stat__num--word { font-size: 22px; }
+  .fl--a { top: 26%; }
+  .fl--b { top: 24%; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
