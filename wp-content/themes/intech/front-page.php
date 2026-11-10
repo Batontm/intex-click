@@ -8,8 +8,6 @@ $video = intech_hero_video();
 $phone = intech_opt( 'intech_phone', '+7 (931) 605-44-84' );
 $wa    = intech_opt( 'intech_wa', 'https://wa.me/79316054484' );
 
-$ticker = array( 'Разработка сайтов', 'Программы на заказ', 'Готовые решения', 'SEO-продвижение', 'Яндекс Директ', 'Серверы', 'Сети и Wi-Fi', 'Резервное копирование', 'IT-сопровождение' );
-
 $services = array(
 	array( 'web', 'Разработка сайтов', 'Корпоративные сайты, лендинги и интернет-магазины с современным дизайном и удобной админкой. Адаптивные и готовые к продвижению.', array( 'WordPress', 'Лендинги', 'Магазины', 'Адаптив' ), 'half' ),
 	array( 'code', 'Программные продукты', 'Разрабатываем программы под процессы заказчика или внедряем и настраиваем готовые решения. Интеграции, доработки и сопровождение.', array( 'На заказ', 'Готовые решения', 'Интеграции' ), 'half' ),
@@ -169,17 +167,6 @@ $faq = array(
 		</div>
 	</div>
 </section>
-
-<!-- ===== Бегущая строка ===== -->
-<div class="ticker" aria-hidden="true">
-	<div class="ticker__track">
-		<?php for ( $r = 0; $r < 2; $r++ ) : ?>
-			<?php foreach ( $ticker as $t ) : ?>
-				<span class="ticker__item"><?php echo esc_html( $t ); ?></span>
-			<?php endforeach; ?>
-		<?php endfor; ?>
-	</div>
-</div>
 
 <!-- ===== Проблема ===== -->
 <section class="section container">
