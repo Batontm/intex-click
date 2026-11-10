@@ -40,22 +40,6 @@
   document.addEventListener('click', function (e) { if (!e.target.closest('.nav__item--drop')) closeDrops(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeDrops(); });
 
-  // --- Телефон: полный номер только при наведении ---
-  var dec = function (v) { try { return atob(v).split('').reverse().join(''); } catch (e) { return ''; } };
-  var touch = window.matchMedia && window.matchMedia('(hover: none)').matches;
-  Array.prototype.forEach.call(document.querySelectorAll('.phone-mask'), function (el) {
-    var txt = el.querySelector('.phone-mask__txt');
-    if (!txt) return;
-    var masked = txt.textContent, href = el.getAttribute('href');
-    function show() { txt.textContent = dec(el.getAttribute('data-p')); el.setAttribute('href', 'tel:' + dec(el.getAttribute('data-t'))); el.classList.add('is-shown'); el.setAttribute('aria-label', 'Позвонить'); }
-    function hide() { if (touch) return; txt.textContent = masked; el.setAttribute('href', href); el.classList.remove('is-shown'); el.setAttribute('aria-label', 'Показать номер телефона'); }
-    el.addEventListener('mouseenter', show);
-    el.addEventListener('focus', show);
-    el.addEventListener('mouseleave', hide);
-    el.addEventListener('blur', hide);
-    el.addEventListener('click', function (e) { if (!el.classList.contains('is-shown')) { e.preventDefault(); show(); } });
-  });
-
   // --- Появление блоков ---
   var items = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !reduce) {

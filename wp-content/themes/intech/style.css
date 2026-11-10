@@ -448,7 +448,8 @@ p { margin: 0; }
 .checks li { display: flex; gap: 14px; align-items: flex-start; }
 .checks .icon { width: 22px; height: 22px; flex-shrink: 0; margin-top: 2px; }
 .contact__phones { margin-top: auto; padding-top: 12px; display: flex; flex-direction: column; gap: 6px; }
-.contact__phones a:first-child { font-family: Unbounded, sans-serif; color: var(--white); font-size: 22px; }
+.contact__phones a:first-child:not(.btn) { font-family: Unbounded, sans-serif; color: var(--white); font-size: 22px; }
+.contact__phones .call-btn { margin-bottom: 6px; }
 .contact__phones a:last-child { color: var(--muted); }
 .form { flex: 1 1 460px; display: flex; flex-wrap: wrap; gap: 18px; align-content: flex-start; }
 .form label { flex: 1 1 200px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--muted); }
@@ -716,7 +717,7 @@ p { margin: 0; }
   .nav__drop { position: static; min-width: 0; padding-top: 10px; opacity: 1; visibility: visible; transform: none; display: none; }
   .nav__item--drop.is-open .nav__drop { display: block; }
   .nav__drop-in { background: rgba(255, 255, 255, .03); box-shadow: none; }
-  .nav__link, .nav__phone { font-size: 17px; }
+  .nav__link { font-size: 17px; }
 }
 
 /* ============ О компании и Контакты ============ */
@@ -748,12 +749,13 @@ a.ccard:hover { transform: translateY(-4px); border-color: rgba(var(--accent-rgb
 .nav__drop-name { white-space: nowrap; }
 @media (max-width: 900px) { .nav__drop-name { white-space: normal; } .site-header:has(.nav.is-open) { background: rgba(4, 6, 12, .97); } }
 
-/* Телефон со скрытыми цифрами */
-.phone-mask { white-space: nowrap; font-variant-numeric: tabular-nums; cursor: pointer; transition: color .2s, text-shadow .3s; }
-.phone-mask.is-shown { color: var(--white); text-shadow: 0 0 14px rgba(var(--accent-rgb), .45); }
+/* Кнопка «Позвонить» (вместо номера телефона) */
+.call-btn { font-family: Manrope, system-ui, sans-serif; letter-spacing: 0; white-space: nowrap; align-self: flex-start; }
+.call-link { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.socials a.call-btn { width: auto; height: 44px; min-height: 44px; padding: 0 22px; border-radius: 999px; border-color: transparent; font-size: 14px; color: var(--on-accent); }
+.site-footer__col a.call-btn, .site-footer__col a.call-btn:hover, .socials a.call-btn:hover { color: var(--on-accent); }
 .contact__phones a:not(:first-child) { color: var(--muted); }
 .contact__phones a:not(:first-child):hover { color: var(--accent); }
-.ccard__value .phone-mask { color: inherit; }
 .email-link { overflow-wrap: anywhere; }
 .ccard__value .email-link, a.ccard .ccard__value { overflow-wrap: anywhere; }
 .cards4 { grid-template-columns: repeat(3, minmax(0, 1fr)); }

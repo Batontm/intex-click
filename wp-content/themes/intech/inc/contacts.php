@@ -55,27 +55,20 @@ function intech_has_instagram() {
 }
 
 /**
- * Телефон, у которого последние цифры скрыты. Полный номер показывается
- * при наведении (на телефоне — по первому нажатию), второе нажатие звонит.
- * Полного номера нет в тексте страницы — он собирается скриптом.
+ * Кнопка «Позвонить» вместо номера телефона: сам номер на странице не показывается,
+ * по нажатию телефон сразу набирает его (tel:).
+ *
+ * @param string $class  Дополнительный CSS-класс.
+ * @param string $text   Подпись.
+ * @param bool   $button true — синяя кнопка (как «Связаться»), false — обычная ссылка в тексте.
  */
-function intech_phone_link( $class = '' ) {
-	$phone  = intech_opt( 'intech_phone', '+7 (931) 605-44-84' );
-	$tel    = preg_replace( '/[^0-9+]/', '', $phone );
-	$masked = $phone;
-	$left   = 4;
-	for ( $i = strlen( $masked ) - 1; $i >= 0 && $left > 0; $i-- ) {
-		if ( ctype_digit( $masked[ $i ] ) ) {
-			$masked = substr_replace( $masked, '•', $i, 1 );
-			$left--;
-		}
-	}
+function intech_phone_link( $class = '', $text = 'Позвонить', $button = true ) {
+	$tel  = preg_replace( '/[^0-9+]/', '', intech_opt( 'intech_phone', '+7 (931) 605-44-84' ) );
+	$base = $button ? 'btn btn--accent btn--sm call-btn' : 'call-link';
 	return sprintf(
-		'<a class="phone-mask %1$s" href="%2$s" data-p="%3$s" data-t="%4$s" aria-label="Показать номер телефона"><span class="phone-mask__txt">%5$s</span></a>',
-		esc_attr( $class ),
-		esc_url( intech_page_url( 'kontakty' ) ),
-		esc_attr( base64_encode( strrev( $phone ) ) ),
-		esc_attr( base64_encode( strrev( $tel ) ) ),
-		esc_html( $masked )
+		'<a class="%1$s" href="%2$s" aria-label="Позвонить в ИНТЕХ">%3$s</a>',
+		esc_attr( trim( $base . ' ' . $class ) ),
+		esc_attr( 'tel:' . $tel ),
+		esc_html( $text )
 	);
 }
