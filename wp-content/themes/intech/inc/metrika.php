@@ -21,8 +21,11 @@ define( 'INTECH_METRIKA_ID', 113813956 );
 add_action( 'wp_head', function () {
 	$id = (int) INTECH_METRIKA_ID;
 	?>
-<!-- Yandex.Metrika counter -->
+<!-- Yandex.Metrika counter: загружается только после согласия посетителя на cookie (см. inc/cookies.php) -->
 <script type="text/javascript">
+window.intechMetrika = function () {
+    if (window.intechMetrikaOn) { return; }
+    window.intechMetrikaOn = true;
     (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();
@@ -31,8 +34,9 @@ add_action( 'wp_head', function () {
     })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=<?php echo $id; ?>', 'ym');
 
     ym(<?php echo $id; ?>, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+};
+if (/(?:^|;\s*)intech_cookies=all(?:;|$)/.test(document.cookie)) { window.intechMetrika(); }
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/<?php echo $id; ?>" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 <script>
 (function () {

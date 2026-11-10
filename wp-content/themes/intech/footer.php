@@ -55,7 +55,11 @@ $address = trim( intech_opt( 'intech_address', '' ) );
 	</div>
 	<div class="container site-footer__bottom">
 		<span>© <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( $company['name'] ); ?> · ИНН <?php echo esc_html( $company['inn'] ); ?> · ОГРН <?php echo esc_html( $company['ogrn'] ); ?></span>
-		<a href="<?php echo esc_url( intech_privacy_url() ); ?>">Политика конфиденциальности</a>
+		<span class="site-footer__legal">
+			<a href="<?php echo esc_url( intech_privacy_url() ); ?>">Политика обработки персональных данных</a>
+			· <a href="<?php echo esc_url( intech_consent_url() ); ?>">Согласие на обработку ПДн</a>
+			· <?php echo intech_cookie_settings_link(); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+		</span>
 		<?php if ( intech_has_instagram() ) : ?>
 			<span class="site-footer__note">* Instagram принадлежит компании Meta, признанной экстремистской и запрещённой в России.</span>
 		<?php endif; ?>

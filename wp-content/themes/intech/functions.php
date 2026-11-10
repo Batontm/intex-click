@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'INTECH_VERSION', '2.8.4' );
+define( 'INTECH_VERSION', '2.9.0' );
 
 require_once get_template_directory() . '/inc/landings.php';
 require_once get_template_directory() . '/inc/legal.php';
@@ -16,6 +16,7 @@ require_once get_template_directory() . '/inc/contacts.php';
 require_once get_template_directory() . '/inc/articles.php';
 require_once get_template_directory() . '/inc/metrika.php';
 require_once get_template_directory() . '/inc/smtp.php';
+require_once get_template_directory() . '/inc/cookies.php';
 
 /* ---------- Базовая настройка темы ---------- */
 add_action( 'after_setup_theme', function () {
@@ -28,10 +29,31 @@ add_action( 'after_setup_theme', function () {
 
 /* ---------- Стили и скрипты ---------- */
 add_action( 'wp_enqueue_scripts', function () {
-	wp_enqueue_style( 'intech-fonts', 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap', array(), null );
+	// Шрифты лежат в теме: без запросов к Google (IP посетителей не уходит за рубеж).
+	wp_enqueue_style( 'intech-fonts', get_template_directory_uri() . '/assets/fonts/fonts.css', array(), INTECH_VERSION );
 	wp_enqueue_style( 'intech-style', get_stylesheet_uri(), array( 'intech-fonts' ), INTECH_VERSION );
 	wp_enqueue_script( 'intech-main', get_template_directory_uri() . '/assets/js/main.js', array(), INTECH_VERSION, true );
 } );
+
+/* ---------- Без обращений к чужим серверам ---------- */
+// Скрипт эмодзи WordPress грузит картинки с s.w.org — он не нужен.
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
+remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+add_filter( 'emoji_svg_url', '__return_false' );
+add_filter( 'wp_resource_hints', function ( $urls, $type ) {
+	if ( 'dns-prefetch' === $type ) {
+		$urls = array_filter( $urls, function ( $u ) {
+			$u = is_array( $u ) ? ( $u['href'] ?? '' ) : $u;
+			return false === strpos( $u, 's.w.org' ) && false === strpos( $u, 'fonts.g' );
+		} );
+	}
+	return $urls;
+}, 10, 2 );
 
 /* ---------- Палитра: класс на <body> ---------- */
 function intech_palettes() {
