@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'INTECH_VERSION', '2.10.1' );
+define( 'INTECH_VERSION', '2.11.0' );
 
 require_once get_template_directory() . '/inc/seo.php';
 require_once get_template_directory() . '/inc/hardening.php';
@@ -181,6 +181,7 @@ function intech_icon( $name, $class = 'icon' ) {
 		'net'   => 'M2 9a14 14 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 20h.01',
 		'brand' => 'M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z',
 		'check' => 'm5 12 5 5 9-10',
+		'phone' => 'M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z',
 		'support' => 'M4 13v-1a8 8 0 0 1 16 0v1M4 13h3v5H5a1 1 0 0 1-1-1zM20 13h-3v5h2a1 1 0 0 0 1-1zM17 18c0 1.7-2 3-5 3',
 		'code'  => 'M8 8l-5 4 5 4M16 8l5 4-5 4M14 5l-4 14',
 		'cam'   => 'M3 7l13-3 2 6-13 3zM8 12l1 4h4M9 16v4M5 20h8M18 9l3-1',

@@ -104,59 +104,6 @@
     });
   }
 
-  // --- Сеть узлов на фоне первого экрана ---
-  var canvas = document.getElementById('heroNet');
-  if (canvas && canvas.getContext) {
-    var ctx = canvas.getContext('2d');
-    var accent = getComputedStyle(document.body).getPropertyValue('--accent-rgb').trim() || '34, 211, 238';
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    var W = 0, H = 0, pts = [], mouse = { x: -9999, y: -9999 };
-
-    function resize() {
-      var r = canvas.getBoundingClientRect();
-      W = r.width; H = r.height;
-      canvas.width = W * dpr; canvas.height = H * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      var n = Math.round(Math.min(90, (W * H) / 16000));
-      pts = [];
-      for (var i = 0; i < n; i++) {
-        pts.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .3, vy: (Math.random() - .5) * .3, r: Math.random() * 1.6 + .6 });
-      }
-    }
-    function frame() {
-      ctx.clearRect(0, 0, W, H);
-      for (var i = 0; i < pts.length; i++) {
-        var p = pts[i];
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0 || p.x > W) p.vx *= -1;
-        if (p.y < 0 || p.y > H) p.vy *= -1;
-        for (var j = i + 1; j < pts.length; j++) {
-          var q = pts[j], dx = p.x - q.x, dy = p.y - q.y, d = dx * dx + dy * dy;
-          if (d < 16000) {
-            ctx.strokeStyle = 'rgba(' + accent + ',' + (0.16 * (1 - d / 16000)).toFixed(3) + ')';
-            ctx.lineWidth = 1;
-            ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke();
-          }
-        }
-        var md = (p.x - mouse.x) * (p.x - mouse.x) + (p.y - mouse.y) * (p.y - mouse.y);
-        if (md < 30000) {
-          ctx.strokeStyle = 'rgba(' + accent + ',' + (0.35 * (1 - md / 30000)).toFixed(3) + ')';
-          ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
-        }
-        ctx.fillStyle = 'rgba(' + accent + ', .85)';
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
-      }
-      if (!reduce) requestAnimationFrame(frame);
-    }
-    resize();
-    window.addEventListener('resize', resize);
-    canvas.parentNode.parentNode.addEventListener('pointermove', function (e) {
-      var r = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
-    });
-    frame();
-  }
-
   // --- Видео на фоне первого экрана ---
   // Грузим только на широких экранах и без «экономии трафика» / «уменьшения движения».
   // Пока первый экран не виден, ролик стоит на паузе.

@@ -42,7 +42,7 @@ get_header();
 			<h1 class="lhero__title">ИНТЕХ — ваш технологический партнёр</h1>
 			<p class="hero__lead">Мы соединяем разработку и «железо»: создаём сайты и программы, помогаем компаниям получать клиентов из интернета и сопровождаем серверы, сеть и рабочие места, на которых держится работа офиса. Один подрядчик — одна ответственность.</p>
 			<div class="hero__actions">
-				<a class="btn btn--accent" href="#contacts">Обсудить задачу <span class="arr" aria-hidden="true">→</span></a>
+				<a class="btn btn--accent" href="#contacts">Оставить заявку <span class="arr" aria-hidden="true">→</span></a>
 				<a class="btn btn--ghost" href="<?php echo esc_url( intech_page_url( 'kontakty' ) ); ?>">Контакты</a>
 			</div>
 		</div>

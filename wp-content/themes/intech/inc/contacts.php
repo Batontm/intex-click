@@ -60,7 +60,8 @@ function intech_has_instagram() {
  *
  * @param string $class  Дополнительный CSS-класс.
  * @param string $text   Подпись.
- * @param bool   $button true — синяя кнопка (как «Связаться»), false — обычная ссылка в тексте.
+ * @param bool   $button true — спокойная кнопка с контуром и значком трубки (яркой на странице остаётся
+ *                       только «Оставить заявку»), false — обычная ссылка в тексте.
  */
 /** Ссылка для звонка: tel:+7… */
 function intech_tel() {
@@ -68,11 +69,12 @@ function intech_tel() {
 }
 
 function intech_phone_link( $class = '', $text = 'Позвонить', $button = true ) {
-	$base = $button ? 'btn btn--accent btn--sm call-btn' : 'call-link';
+	$base = $button ? 'btn btn--ghost btn--sm call-btn' : 'call-link';
 	return sprintf(
-		'<a class="%1$s" href="%2$s" aria-label="Позвонить в ИНТЕХ">%3$s</a>',
+		'<a class="%1$s" href="%2$s" aria-label="Позвонить в ИНТЕХ">%4$s%3$s</a>',
 		esc_attr( trim( $base . ' ' . $class ) ),
 		esc_attr( intech_tel() ),
-		esc_html( $text )
+		esc_html( $text ),
+		$button ? intech_icon( 'phone' ) : ''
 	);
 }

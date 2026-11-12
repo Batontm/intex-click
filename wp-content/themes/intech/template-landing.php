@@ -38,7 +38,7 @@ get_header();
 			<h1 class="lhero__title"><?php echo wp_kses( $l['h1'], array() ); ?></h1>
 			<p class="hero__lead"><?php echo esc_html( $l['lead'] ); ?></p>
 			<div class="hero__actions">
-				<a class="btn btn--accent" href="#contacts">Обсудить задачу <span class="arr" aria-hidden="true">→</span></a>
+				<a class="btn btn--accent" href="#contacts">Оставить заявку <span class="arr" aria-hidden="true">→</span></a>
 				<a class="btn btn--ghost" href="#services">Что входит</a>
 			</div>
 			<div class="hero__stats">
@@ -85,7 +85,7 @@ get_header();
 			<span class="eyebrow">Подробнее</span>
 			<h2 class="h2"><?php echo esc_html( $l['extra']['title'] ); ?></h2>
 			<p class="lead"><?php echo esc_html( $l['extra']['text'] ); ?></p>
-			<a class="btn btn--accent" href="#contacts">Получить консультацию <span class="arr" aria-hidden="true">→</span></a>
+			<a class="btn btn--accent" href="#contacts">Оставить заявку <span class="arr" aria-hidden="true">→</span></a>
 		</div>
 		<ul class="infra__list lextra__list">
 			<?php foreach ( $l['extra']['bullets'] as $b ) : ?><li><?php echo esc_html( $b ); ?></li><?php endforeach; ?>

@@ -51,15 +51,6 @@ $steps = array(
 	array( 'Передаём результат', 'Передаём необходимые материалы и доступы, объясняем дальнейшие действия.', 'Инструкции, доступы и рекомендации по дальнейшей работе.' ),
 );
 
-$tasks = array(
-	array( 'web', 'Нужен сайт с нуля', 'Разработаем сайт под задачи компании и запустим его.', array( 'Прототип', 'Дизайн', 'Запуск' ) ),
-	array( 'seo', 'Сайт есть, но нет обращений', 'Проверим структуру, контент и рекламу, найдём, что мешает.', array( 'Аудит', 'План', 'Внедрение' ) ),
-	array( 'net', 'Офис без нормальной сети', 'Спроектируем, подключим и настроим сеть и Wi-Fi.', array( 'Обследование', 'Проект', 'Монтаж' ) ),
-	array( 'srv', 'Сервер 1С работает медленно', 'Проверим оборудование и настройки сервера.', array( 'Диагностика', 'Настройка', 'Контроль' ) ),
-	array( 'support', 'Нет своего IT-специалиста', 'Обслуживание сайтов, серверов и рабочих компьютеров.', array( 'Договор', 'Регламент', 'Выезды' ) ),
-	array( 'code', 'Нужна программа под процессы', 'Разработаем решение на заказ или внедрим готовое.', array( 'Анализ', 'Разработка', 'Внедрение' ) ),
-);
-
 $faq = array(
 	array( 'Сколько стоит сайт?', 'Стоимость зависит от объёма: количества страниц, функций и готовности материалов. После обсуждения задачи называем стоимость и сроки до начала работ.' ),
 	array( 'Можно доработать существующий сайт?', 'Да. Смотрим текущий сайт и предлагаем, что исправить или доработать, — без обязательной переделки с нуля.' ),
@@ -91,7 +82,6 @@ $faq = array(
 		<div class="hero__glow hero__glow--a"></div>
 		<div class="hero__glow hero__glow--b"></div>
 		<div class="hero__grid"></div>
-		<canvas class="hero__canvas" id="heroNet"></canvas>
 		<div class="hero__fade"></div>
 	</div>
 
@@ -99,15 +89,15 @@ $faq = array(
 		<div class="hero__text">
 			<span class="chip"><span class="pulse"></span>IT-компания полного цикла</span>
 			<h1 class="hero__title">Сайты, программы и&nbsp;IT&#8209;сопровождение <span class="grad">под&nbsp;ключ</span></h1>
-			<p class="hero__lead">Разрабатываем сайты и программные продукты — на заказ или на основе готовых решений. Настраиваем продвижение, помогаем отслеживать обращения и полностью сопровождаем IT-инфраструктуру компании.</p>
+			<p class="hero__lead">Разрабатываем сайты и программы, настраиваем продвижение и сопровождаем IT-инфраструктуру компании.</p>
 			<div class="hero__actions">
-				<a class="btn btn--accent" href="#contacts">Обсудить проект <span class="arr" aria-hidden="true">→</span></a>
+				<a class="btn btn--accent" href="#contacts">Оставить заявку <span class="arr" aria-hidden="true">→</span></a>
 				<a class="btn btn--ghost" href="#services">Наши услуги</a>
 			</div>
 			<div class="hero__stats">
-				<div class="hero__stat"><b>Под ключ</b><span>от задачи до запуска</span></div>
-				<div class="hero__stat"><b>Выезд</b><span>инженера в офис</span></div>
-				<div class="hero__stat"><b>Поддержка</b><span>после запуска</span></div>
+				<div class="hero__stat"><b>С 2015 года</b><span>работаем в Калининграде</span></div>
+				<div class="hero__stat"><b>За 1 день</b><span>отвечаем на заявку</span></div>
+				<div class="hero__stat"><b>По договору</b><span>с закрывающими документами</span></div>
 			</div>
 		</div>
 
@@ -294,7 +284,7 @@ $faq = array(
 			<article class="sol glass reveal">
 				<div class="sol__art">
 					<span class="sol__badge">Пример решения</span>
-					<a class="sol__go" href="#contacts">Обсудить такое решение <span aria-hidden="true">→</span></a>
+					<a class="sol__go" href="#contacts">Оставить заявку <span aria-hidden="true">→</span></a>
 					<?php echo intech_art( $sol[0] ); // phpcs:ignore WordPress.Security.EscapeOutput -- SVG из файлов темы ?>
 				</div>
 				<div class="sol__body">
@@ -309,7 +299,7 @@ $faq = array(
 		<?php endforeach; ?>
 	</div>
 	<div class="sol__cta reveal">
-		<a class="btn btn--accent" href="#contacts">Обсудить свою задачу <span class="arr" aria-hidden="true">→</span></a>
+		<a class="btn btn--accent" href="#contacts">Оставить заявку <span class="arr" aria-hidden="true">→</span></a>
 	</div>
 </section>
 <?php endif; ?>
@@ -319,9 +309,8 @@ $faq = array(
 	<div class="section-head reveal">
 		<div class="section-head__title">
 			<span class="eyebrow">Процесс</span>
-			<h2 class="h2">Как мы работаем</h2>
+			<h2 class="h2 h2--sm">Как мы работаем</h2>
 		</div>
-		<a class="btn btn--ghost" href="#contacts">Начать проект <span class="arr" aria-hidden="true">→</span></a>
 	</div>
 	<div class="timeline timeline--4">
 		<?php foreach ( $steps as $i => $st ) : ?>
@@ -351,36 +340,12 @@ $faq = array(
 	</div>
 </section>
 
-<!-- ===== Решаем задачи бизнеса ===== -->
-<section class="section container" id="tasks">
-	<div class="section-head reveal">
-		<div class="section-head__title">
-			<span class="eyebrow">С чем к нам приходят</span>
-			<h2 class="h2">Решаем задачи бизнеса</h2>
-		</div>
-	</div>
-	<ul class="tasks reveal">
-		<?php foreach ( $tasks as $t ) : ?>
-			<li class="task">
-				<span class="task__icon"><?php echo intech_icon( $t[0] ); // phpcs:ignore ?></span>
-				<span class="task__title"><?php echo esc_html( $t[1] ); ?></span>
-				<span class="task__text"><?php echo esc_html( $t[2] ); ?></span>
-				<span class="xp"><span class="xp__in">
-					<span class="task__steps">
-						<?php foreach ( $t[3] as $k => $stp ) : ?><?php if ( $k ) : ?><span class="task__arr" aria-hidden="true">→</span><?php endif; ?><span><?php echo esc_html( $stp ); ?></span><?php endforeach; ?>
-					</span>
-				</span></span>
-			</li>
-		<?php endforeach; ?>
-	</ul>
-</section>
-
 <!-- ===== Частые вопросы ===== -->
 <section class="section container" id="faq">
 	<div class="section-head reveal">
 		<div class="section-head__title">
 			<span class="eyebrow">Вопросы</span>
-			<h2 class="h2">Частые вопросы</h2>
+			<h2 class="h2 h2--sm">Частые вопросы</h2>
 		</div>
 	</div>
 	<div class="faq">
@@ -398,12 +363,12 @@ $faq = array(
 	<div class="section-head reveal">
 		<div class="section-head__title">
 			<span class="eyebrow">Блог</span>
-			<h2 class="h2">Полезное для бизнеса</h2>
+			<h2 class="h2 h2--sm">Полезное для бизнеса</h2>
 		</div>
 		<a class="link-accent" href="<?php echo esc_url( intech_blog_url() ); ?>">Все статьи <span aria-hidden="true">→</span></a>
 	</div>
 	<div class="acards">
-		<?php foreach ( array_slice( intech_articles(), 0, 6 ) as $fa ) : ?>
+		<?php foreach ( array_slice( intech_articles(), 0, 3 ) as $fa ) : ?>
 			<?php echo intech_article_card( $fa ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 		<?php endforeach; ?>
 	</div>

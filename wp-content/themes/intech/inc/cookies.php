@@ -21,8 +21,8 @@ add_action( 'wp_footer', function () {
 	?>
 <div class="cookie-bar" id="cookieBar" role="dialog" aria-live="polite" aria-label="Согласие на использование cookie" hidden>
 	<p class="cookie-bar__text">
-		Мы используем файлы cookie и сервис Яндекс Метрика, чтобы анализировать посещаемость и улучшать сайт.
-		Метрика включится, только если вы нажмёте «Принять». Подробнее — в <a href="<?php echo esc_url( intech_privacy_url() ); ?>">политике обработки персональных данных</a>.
+		Используем cookie и Яндекс Метрику для статистики посещений. Метрика включится только после «Принять».
+		<a href="<?php echo esc_url( intech_privacy_url() ); ?>">Подробнее</a>
 	</p>
 	<div class="cookie-bar__actions">
 		<button type="button" class="btn btn--accent btn--sm" data-cookie="all">Принять</button>

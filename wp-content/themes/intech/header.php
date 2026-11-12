@@ -24,6 +24,7 @@ $home = home_url( '/' );
 			<?php echo intech_logo_svg( 'full', 'logo__svg' ); // phpcs:ignore WordPress.Security.EscapeOutput -- SVG темы ?>
 		</a>
 
+		<a class="header-call" href="<?php echo esc_attr( intech_tel() ); ?>" aria-label="Позвонить в ИНТЕХ"><?php echo intech_icon( 'phone' ); // phpcs:ignore ?></a>
 		<button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="siteNav">
 			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
 		</button>
@@ -52,7 +53,7 @@ $home = home_url( '/' );
 			<a class="nav__link<?php echo 'o-kompanii' === $cur_page ? ' is-active' : ''; ?>" href="<?php echo esc_url( intech_page_url( 'o-kompanii' ) ); ?>"<?php echo 'o-kompanii' === $cur_page ? ' aria-current="page"' : ''; ?>>О компании</a>
 			<a class="nav__link<?php echo 'kontakty' === $cur_page ? ' is-active' : ''; ?>" href="<?php echo esc_url( intech_page_url( 'kontakty' ) ); ?>"<?php echo 'kontakty' === $cur_page ? ' aria-current="page"' : ''; ?>>Контакты</a>
 			<?php echo intech_phone_link( 'nav__phone' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
-			<a class="btn btn--accent btn--sm" href="<?php echo esc_url( $has_form ? '#contacts' : intech_page_url( 'kontakty' ) . '#contacts' ); ?>">Связаться</a>
+			<a class="btn btn--accent btn--sm" href="<?php echo esc_url( $has_form ? '#contacts' : intech_page_url( 'kontakty' ) . '#contacts' ); ?>">Оставить заявку</a>
 		</nav>
 	</div>
 </header>
