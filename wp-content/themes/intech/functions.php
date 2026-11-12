@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'INTECH_VERSION', '2.12.0' );
+define( 'INTECH_VERSION', '2.13.0' );
 
 require_once get_template_directory() . '/inc/seo.php';
 require_once get_template_directory() . '/inc/hardening.php';
@@ -20,6 +20,7 @@ require_once get_template_directory() . '/inc/metrika.php';
 require_once get_template_directory() . '/inc/smtp.php';
 require_once get_template_directory() . '/inc/cookies.php';
 require_once get_template_directory() . '/inc/antispam.php';
+require_once get_template_directory() . '/inc/telegram.php';
 
 /* ---------- Базовая настройка темы ---------- */
 add_action( 'after_setup_theme', function () {
@@ -259,12 +260,19 @@ function intech_handle_lead() {
 	$sent = wp_mail( $to, $subject, $body, $headers );
 
 	// Копия заявки в базе (на случай, если почта не настроена).
-	wp_insert_post( array(
+	$status  = $sent ? 'Письмо отправлено на ' . $to : 'Письмо НЕ отправлено — проверьте настройки почты';
+	$lead_id = wp_insert_post( array(
 		'post_type'    => 'intech_lead',
 		'post_status'  => 'private',
 		'post_title'   => $name ? $name . ' — ' . $phone : 'Заявка ' . current_time( 'mysql' ),
-		'post_content' => $body . "\n" . ( $sent ? 'Письмо отправлено на ' . $to : 'Письмо НЕ отправлено — проверьте настройки почты' ),
+		'post_content' => $body . "\n" . $status,
 	) );
+
+	// Уведомление в Telegram (inc/telegram.php), если оно настроено; итог дописываем в заявку.
+	$tg = intech_tg_notify_lead( is_wp_error( $lead_id ) ? 0 : $lead_id, $name, $phone, $message );
+	if ( $tg && $lead_id && ! is_wp_error( $lead_id ) ) {
+		wp_update_post( array( 'ID' => $lead_id, 'post_content' => $body . "\n" . $status . "\n" . $tg ) );
+	}
 
 	wp_safe_redirect( add_query_arg( 'sent', '1', home_url( '/' ) ) . '#contacts' );
 	exit;
