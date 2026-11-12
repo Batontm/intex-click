@@ -7,8 +7,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'INTECH_VERSION', '2.9.1' );
+define( 'INTECH_VERSION', '2.10.0' );
 
+require_once get_template_directory() . '/inc/seo.php';
+require_once get_template_directory() . '/inc/hardening.php';
 require_once get_template_directory() . '/inc/landings.php';
 require_once get_template_directory() . '/inc/legal.php';
 require_once get_template_directory() . '/inc/logo.php';
@@ -100,7 +102,7 @@ add_action( 'customize_register', function ( $wp_customize ) {
 	) );
 	$wp_customize->add_control( new WP_Customize_Upload_Control( $wp_customize, 'intech_hero_video', array(
 		'label'       => 'Видео на первом экране (MP4)',
-		'description' => 'Загрузите ролик или вставьте ссылку. Если пусто — берутся assets/video/hero.webm и hero.mp4 из темы (и заставка hero.jpg). На телефонах видео не загружается.',
+		'description' => 'Загрузите ролик или вставьте ссылку. Если пусто — берутся assets/video/hero.webm и hero.mp4 из темы (и заставка hero.jpg; как подготовить — docs/hero-video.md в репозитории). На телефонах видео не загружается.',
 		'section'     => 'intech',
 		'mime_type'   => 'video',
 	) ) );

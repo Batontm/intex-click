@@ -129,8 +129,17 @@ add_action( 'wp_head', function () {
 		}
 		$org = array(
 			'@context'   => 'https://schema.org',
-			'@type'      => 'Organization',
+			'@type'      => 'ProfessionalService',
 			'name'       => 'ИНТЕХ',
+			'image'      => get_template_directory_uri() . '/assets/img/og.jpg',
+			'logo'       => get_template_directory_uri() . '/assets/img/icon-512.png',
+			'address'    => array(
+				'@type'           => 'PostalAddress',
+				'addressLocality' => 'Калининград',
+				'addressRegion'   => 'Калининградская область',
+				'postalCode'      => '236039',
+				'addressCountry'  => 'RU',
+			),
 			'legalName'  => $c['full'],
 			'taxID'      => $c['inn'],
 			'url'        => $url,

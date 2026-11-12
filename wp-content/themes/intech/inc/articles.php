@@ -159,7 +159,8 @@ add_filter( 'template_include', function ( $template ) {
 add_filter( 'pre_get_document_title', function ( $title ) {
 	$a = intech_current_article();
 	if ( $a ) {
-		return $a['title'] . ' — блог ИНТЕХ';
+		$short = intech_short_titles();
+		return intech_seo_title( isset( $short[ $a['slug'] ] ) ? $short[ $a['slug'] ] : $a['title'] );
 	}
 	if ( get_query_var( 'intech_blog' ) ) {
 		$c = intech_blog_cat();
@@ -172,7 +173,7 @@ add_action( 'wp_head', function () {
 	$a = intech_current_article();
 	if ( $a ) {
 		$url = intech_article_url( $a['slug'] );
-		echo '<meta name="description" content="' . esc_attr( $a['desc'] ) . "\">\n";
+		echo '<meta name="description" content="' . esc_attr( intech_seo_desc( $a['desc'] ) ) . "\">\n";
 		echo '<link rel="canonical" href="' . esc_url( $url ) . "\">\n";
 		echo '<meta property="og:title" content="' . esc_attr( $a['title'] ) . "\">\n";
 		echo '<meta property="og:description" content="' . esc_attr( $a['desc'] ) . "\">\n";
@@ -213,8 +214,22 @@ add_action( 'wp_head', function () {
 		$c    = intech_blog_cat();
 		$url  = intech_blog_url( $c );
 		$desc = $c ? intech_blog_cats()[ $c ][1] : 'Полезные статьи ИНТЕХ для руководителей и владельцев бизнеса: как сделать сайт, продвигать компанию в Яндексе, наладить сеть, серверы и резервное копирование.';
-		echo '<meta name="description" content="' . esc_attr( $desc ) . "\">\n";
+		$name = $c ? intech_blog_cats()[ $c ][0] : 'Блог ИНТЕХ';
+		echo '<meta name="description" content="' . esc_attr( intech_seo_desc( $desc ) ) . "\">\n";
 		echo '<link rel="canonical" href="' . esc_url( $url ) . "\">\n";
+		echo '<meta property="og:title" content="' . esc_attr( wp_get_document_title() ) . "\">\n";
+		echo '<meta property="og:description" content="' . esc_attr( $desc ) . "\">\n";
+		echo '<meta property="og:url" content="' . esc_url( $url ) . "\">\n";
+		echo '<meta property="og:type" content="website">' . "\n";
+		$crumbs = array(
+			array( '@type' => 'ListItem', 'position' => 1, 'name' => 'Главная', 'item' => home_url( '/' ) ),
+			array( '@type' => 'ListItem', 'position' => 2, 'name' => 'Блог', 'item' => intech_blog_url() ),
+		);
+		if ( $c ) {
+			$crumbs[] = array( '@type' => 'ListItem', 'position' => 3, 'name' => $name, 'item' => $url );
+		}
+		$ld = array( '@context' => 'https://schema.org', '@type' => 'BreadcrumbList', 'itemListElement' => $crumbs );
+		echo '<script type="application/ld+json">' . wp_json_encode( $ld, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) . "</script>\n";
 	}
 }, 1 );
 
