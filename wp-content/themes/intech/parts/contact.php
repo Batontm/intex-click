@@ -33,7 +33,7 @@ $phone = intech_opt( 'intech_phone', '+7 (931) 605-44-84' );
 			<label class="screen-reader-text" aria-hidden="true">Сайт <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
 			<label>Имя <input class="ym-disable-keys" type="text" name="name" placeholder="Ваше имя" required></label>
 			<label>Email <input class="ym-disable-keys" type="email" name="email" placeholder="you@company.ru"></label>
-			<label class="full">Телефон <input class="ym-disable-keys" type="tel" name="phone" placeholder="+7" required></label>
+			<label class="full">Телефон <input class="ym-disable-keys" type="tel" name="phone" placeholder="+7 (___) ___-__-__" inputmode="tel" autocomplete="tel" required></label>
 			<label class="full">Сообщение <textarea class="ym-disable-keys" name="message" rows="4" placeholder="Расскажите о задаче: сайт, программа, продвижение, IT"></textarea></label>
 			<label class="form__consent full"><input type="checkbox" name="consent" value="1" required> <span>Даю <a href="<?php echo esc_url( intech_consent_url() ); ?>" target="_blank">согласие на обработку персональных данных</a></span></label>
 			<p class="form__links">Как мы обрабатываем и защищаем данные — в <a href="<?php echo esc_url( intech_privacy_url() ); ?>" target="_blank">политике обработки персональных данных</a>.</p>

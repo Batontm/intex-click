@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'INTECH_VERSION', '2.11.0' );
+define( 'INTECH_VERSION', '2.11.1' );
 
 require_once get_template_directory() . '/inc/seo.php';
 require_once get_template_directory() . '/inc/hardening.php';
@@ -195,6 +195,21 @@ function intech_icon( $name, $class = 'icon' ) {
 add_action( 'admin_post_nopriv_intech_lead', 'intech_handle_lead' );
 add_action( 'admin_post_intech_lead', 'intech_handle_lead' );
 
+/**
+ * Телефон из формы в едином виде: +7 (999) 123-45-67.
+ * Принимает номер в любой записи (с 8, с +7, без кода страны); если цифр не 10 — пустая строка.
+ */
+function intech_normalize_phone( $raw ) {
+	$d = preg_replace( '/\D/', '', (string) $raw );
+	if ( 11 === strlen( $d ) && in_array( $d[0], array( '7', '8' ), true ) ) {
+		$d = substr( $d, 1 );
+	}
+	if ( 10 !== strlen( $d ) ) {
+		return '';
+	}
+	return sprintf( '+7 (%s) %s-%s-%s', substr( $d, 0, 3 ), substr( $d, 3, 3 ), substr( $d, 6, 2 ), substr( $d, 8, 2 ) );
+}
+
 function intech_handle_lead() {
 	if ( ! isset( $_POST['intech_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['intech_nonce'] ) ), 'intech_lead' ) ) {
 		wp_die( 'Ошибка проверки формы. Обновите страницу и попробуйте снова.' );
@@ -210,7 +225,10 @@ function intech_handle_lead() {
 
 	$name    = sanitize_text_field( wp_unslash( $_POST['name'] ?? '' ) );
 	$email   = sanitize_email( wp_unslash( $_POST['email'] ?? '' ) );
-	$phone   = sanitize_text_field( wp_unslash( $_POST['phone'] ?? '' ) );
+	$phone   = intech_normalize_phone( sanitize_text_field( wp_unslash( $_POST['phone'] ?? '' ) ) );
+	if ( ! $phone ) {
+		wp_die( 'Проверьте номер телефона: нужны +7 и 10 цифр, например +7 (931) 123-45-67.', 'Неверный номер', array( 'back_link' => true ) );
+	}
 	$message = sanitize_textarea_field( wp_unslash( $_POST['message'] ?? '' ) );
 
 	$to      = intech_email();

@@ -104,6 +104,44 @@
     });
   }
 
+  // --- Телефон в форме: только цифры, вид +7 (999) 123-45-67 ---
+  // Первая 8 или 7 превращается в +7; вставленный номер в любом виде приводится к тому же формату.
+  function phoneDigits(v) {
+    v = String(v);
+    var d = v.replace(/\D/g, '');
+    var lead = d.charAt(0) === '7' || d.charAt(0) === '8';
+    if (/^\s*\+\s*7/.test(v)) d = d.slice(1);          // уже с +7: это код страны
+    else if (lead && d.length !== 10) d = d.slice(1);  // набрали 8… или 7…: тоже код страны
+    if (d.length > 10 && (d.charAt(0) === '7' || d.charAt(0) === '8')) d = d.slice(1); // +7 (8 931…) — лишняя восьмёрка
+    return d.slice(0, 10);
+  }
+  function phoneFormat(d) {
+    var s = '+7 (' + d.slice(0, 3);
+    if (d.length > 3) s += ') ' + d.slice(3, 6);
+    if (d.length > 6) s += '-' + d.slice(6, 8);
+    if (d.length > 8) s += '-' + d.slice(8, 10);
+    return s;
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('input[type="tel"]'), function (inp) {
+    var prev = '';
+    function check(d) {
+      inp.setCustomValidity(d.length === 10 || (!d.length && !inp.required) ? '' : 'Введите номер полностью: +7 и 10 цифр');
+    }
+    function apply(e) {
+      if (inp.value === '+') return;
+      var d = phoneDigits(inp.value);
+      var del = e && e.inputType && e.inputType.indexOf('delete') === 0;
+      if (del && d === prev && d.length) d = d.slice(0, -1); // стёрли скобку или дефис — убираем цифру перед ним
+      inp.value = d.length || !del ? phoneFormat(d) : '';
+      prev = d;
+      check(d);
+    }
+    inp.addEventListener('input', apply);
+    inp.addEventListener('change', function () { if (inp.value) apply(); });
+    inp.addEventListener('blur', function () { if (!phoneDigits(inp.value).length) { inp.value = ''; prev = ''; } });
+    if (inp.value) apply(); else check('');
+  });
+
   // --- Видео на фоне первого экрана ---
   // Грузим только на широких экранах и без «экономии трафика» / «уменьшения движения».
   // Пока первый экран не виден, ролик стоит на паузе.
