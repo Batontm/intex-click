@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'INTECH_VERSION', '2.10.0' );
+define( 'INTECH_VERSION', '2.10.1' );
 
 require_once get_template_directory() . '/inc/seo.php';
 require_once get_template_directory() . '/inc/hardening.php';

@@ -56,7 +56,10 @@ function intech_seo_desc( $desc ) {
 
 /* ---------- Картинка для ссылок в соцсетях и мессенджерах (на всех страницах) ---------- */
 add_action( 'wp_head', function () {
-	if ( is_404() ) {
+	// Страницы услуг, блога и «О компании» тема отдаёт сама: для WordPress они формально «не найдены»,
+	// поэтому настоящую 404 отличаем по тому, что это не одна из страниц темы.
+	$own = intech_current_landing() || intech_current_page() || intech_is_blog();
+	if ( is_404() && ! $own ) {
 		return;
 	}
 	$file = get_template_directory() . '/assets/img/og.jpg';
