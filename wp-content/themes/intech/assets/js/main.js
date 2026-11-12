@@ -142,6 +142,16 @@
     if (inp.value) apply(); else check('');
   });
 
+  // --- Защита формы от ботов: отметка, что форму заполняет человек в браузере ---
+  var loadedAt = Date.now();
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="intech_js"]'), function (g) {
+    var form = g.form;
+    if (!form) return;
+    function mark() { g.value = g.getAttribute('data-guard') + ':' + (Date.now() - loadedAt); }
+    ['pointerdown', 'keydown', 'focusin', 'input'].forEach(function (ev) { form.addEventListener(ev, mark); });
+    form.addEventListener('submit', mark);
+  });
+
   // --- Видео на фоне первого экрана ---
   // Грузим только на широких экранах и без «экономии трафика» / «уменьшения движения».
   // Пока первый экран не виден, ролик стоит на паузе.

@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'INTECH_VERSION', '2.11.1' );
+define( 'INTECH_VERSION', '2.12.0' );
 
 require_once get_template_directory() . '/inc/seo.php';
 require_once get_template_directory() . '/inc/hardening.php';
@@ -19,6 +19,7 @@ require_once get_template_directory() . '/inc/articles.php';
 require_once get_template_directory() . '/inc/metrika.php';
 require_once get_template_directory() . '/inc/smtp.php';
 require_once get_template_directory() . '/inc/cookies.php';
+require_once get_template_directory() . '/inc/antispam.php';
 
 /* ---------- Базовая настройка темы ---------- */
 add_action( 'after_setup_theme', function () {
@@ -230,6 +231,20 @@ function intech_handle_lead() {
 		wp_die( 'Проверьте номер телефона: нужны +7 и 10 цифр, например +7 (931) 123-45-67.', 'Неверный номер', array( 'back_link' => true ) );
 	}
 	$message = sanitize_textarea_field( wp_unslash( $_POST['message'] ?? '' ) );
+
+	// Защита от ботов (inc/antispam.php). Боту и при повторе — обычный переход, без записи заявки.
+	$guard = intech_form_guard_check( $name, $phone, $message );
+	if ( 'limit' === $guard ) {
+		wp_die( 'Слишком много заявок подряд. Попробуйте через 10 минут или позвоните нам.', 'Слишком часто', array( 'back_link' => true ) );
+	}
+	if ( 'dup' === $guard ) {
+		wp_safe_redirect( add_query_arg( 'sent', '1', home_url( '/' ) ) . '#contacts' );
+		exit;
+	}
+	if ( $guard ) {
+		wp_safe_redirect( home_url( '/#contacts' ) );
+		exit;
+	}
 
 	$to      = intech_email();
 	if ( ! is_email( $to ) ) {
